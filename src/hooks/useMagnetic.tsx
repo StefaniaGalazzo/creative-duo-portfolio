@@ -5,8 +5,8 @@ export function useMagnetic(ref: React.RefObject<HTMLElement>, strength = 0.08, 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
 
-  const springX = useSpring(x, { stiffness: 190, damping: 30 })
-  const springY = useSpring(y, { stiffness: 190, damping: 10 })
+  const springX = useSpring(x, { stiffness: 100, damping: 10 })
+  const springY = useSpring(y, { stiffness: 100, damping: 10 })
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -25,6 +25,7 @@ export function useMagnetic(ref: React.RefObject<HTMLElement>, strength = 0.08, 
       const ny = vy / distance
 
       const force = Math.min(distance * strength, maxOffset)
+      // const force = Math.min(Math.pow(distance, 0.85) * strength, maxOffset)
 
       x.set(nx * force)
       y.set(ny * force)
