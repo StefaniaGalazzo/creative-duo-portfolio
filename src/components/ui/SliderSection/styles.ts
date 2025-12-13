@@ -1,20 +1,10 @@
 import styled, { css } from 'styled-components'
 
-// Container per lo scroll orizzontale
+// Container per catturare lo scroll verticale
 export const SliderContainer = styled.div`
-  display: flex;
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-
-  /* Nascondi scrollbar */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  position: relative;
+  overflow: hidden;
 `
 
 const variants = {
@@ -23,12 +13,12 @@ const variants = {
     align-items: center;
     padding: 5rem 2rem;
     gap: 2rem;
-    text-align: ${({ $textAlign }) => $textAlign || 'lefts'};
+    text-align: ${({ $textAlign }) => $textAlign || 'left'};
     justify-content: end;
     z-index: 100;
-    overflow: hidden;
     border-top: 1px solid ${({ theme }) => theme?.colors?.detail1 || '#fff'};
-    width: 100%;
+    width: 100vw;
+    min-width: 100vw;
     flex-shrink: 0;
 
     /* Transizione per l'hover */
