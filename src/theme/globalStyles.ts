@@ -35,7 +35,7 @@ export const GlobalStyles = createGlobalStyle`
   }
     
   main{
-  display: grid;
+    display: grid;
     grid-template-columns: 5% 90% 5%;
   }
 
@@ -50,7 +50,7 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1;
   }
 
-  h4, h5, h6, p, span  {
+  h4, h5, h6, p, span, a, button  {
     font-family: ${({ theme }) => theme?.tokens?.fonts?.paragraph};
   }
   

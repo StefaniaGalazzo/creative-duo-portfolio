@@ -1,6 +1,6 @@
 // src/components/ui/Text/index.tsx
 import React from 'react'
-import { TextWrap } from './styled'
+import { TextWrap } from './styles'
 
 type TextProps = React.ComponentProps<typeof TextWrap> & {
   as?: React.ElementType

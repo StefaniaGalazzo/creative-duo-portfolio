@@ -7,5 +7,7 @@ import { Flex } from './elements/Flex'
 import { Box } from './elements/Box'
 import Hero from './ui/Hero/index'
 import { Text } from './elements/Text'
+import SliderSection from './ui/SliderSection/index'
+import { Button } from './elements/Button/index'
 //
-export { MainMenu, Navbar, IsaLayout, SteLayout, Loading, Flex, Box, Hero, Text }
+export { MainMenu, Navbar, IsaLayout, SteLayout, Loading, Flex, Box, Hero, Text, Button, SliderSection }

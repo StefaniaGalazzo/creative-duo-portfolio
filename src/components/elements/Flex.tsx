@@ -27,6 +27,7 @@ type FlexProps = {
   $radius?: string | number
   $gap?: string | number
   $display?: string
+  $userSelect?: string
   $borderRadius?: string | number
   $position?: string
   full?: boolean | string
@@ -40,7 +41,7 @@ type FlexProps = {
 const FlexWrap = styled.div<FlexProps>`
   position: ${({ $position }) => $position || 'relative'};
   width: ${({ $width, $w }) => $width || $w || 'auto'};
-  height: ${({ $height, h }) => $height || h || 'auto'};
+  height: ${({ $height }) => $height || undefined};
   overflow: ${({ $overflow }) => $overflow || 'visible'};
   transition: ${({ $transition }) => $transition || 'none'};
   z-index: ${({ $zIndex }) => $zIndex || 'auto'};
@@ -53,11 +54,12 @@ const FlexWrap = styled.div<FlexProps>`
   flex-wrap: ${({ $wrap = 'nowrap' }) => $wrap};
   border-radius: ${({ $radius, $borderRadius }) => ($radius ? `${$radius}rem` : $borderRadius || undefined)};
   box-shadow: ${({ $boxShadow }) => $boxShadow || 'none'};
-  gap: ${({ $gap }) => ($gap ? `${$gap}rem` : undefined)};
+  gap: ${({ $gap }) => ($gap ? `${$gap}` : undefined)};
   background: ${({ $bg }) => ($bg ? `${$bg}` : undefined)};
-  padding: ${({ $padding, $p }) => $padding || `${$p}rem` || undefined};
+  padding: ${({ $padding }) => $padding || undefined};
   textalign: ${({ $textAlign }) => $textAlign || undefined};
   color: ${({ $color }) => $color || undefined};'};
+  user-select: ${({ $userSelect }) => $userSelect || 'auto'};
   ${({ full }) =>
     full &&
     css`

@@ -19,4 +19,40 @@ export const HeroWrapper = styled.div<HeroWrapperProps>`
   align-items: center;
   justify-content: center;
   text-align: ${({ $textAlign }) => $textAlign || 'center'};
+
+  .name {
+    font-size: 8rem;
+  }
+  .name span:last-child {
+    white-space: nowrap;
+  }
+
+  // ------ MEDIA QUERY ------//
+  /* Desktop */
+  @media (max-width: 1440px) {
+    .name {
+      font-size: 8rem;
+    }
+  }
+
+  /* Laptop */
+  @media (max-width: 1024px) {
+    .name {
+      font-size: 5rem;
+    }
+  }
+
+  /* Tablet */
+  @media (max-width: 768px) {
+    .name {
+      font-size: 4rem;
+    }
+  }
+
+  // /* Mobile */
+  // @media (max-width: 480px) {
+  //   .name {
+  //     font-size: 5rem;
+  //   }
+  // }
 `

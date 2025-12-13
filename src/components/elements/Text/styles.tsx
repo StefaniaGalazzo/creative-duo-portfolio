@@ -124,8 +124,6 @@ export const TextWrap = styled.p<TextWrapProps>`
     // Z-index
     $zIndex,
   }: TextWrapProps) => css`
-    box-sizing: border-box;
-
     /* Typography */
     font-family: ${$fontFamily || undefined};
     font-weight: ${$fontWeight || undefined};

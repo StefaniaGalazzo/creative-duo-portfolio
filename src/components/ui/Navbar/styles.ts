@@ -23,7 +23,6 @@ type NavWrapperProps = {
 }
 
 export const NavWrapper = styled.header<NavWrapperProps>`
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: end;

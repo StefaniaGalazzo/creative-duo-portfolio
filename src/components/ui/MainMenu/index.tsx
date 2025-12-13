@@ -8,7 +8,7 @@ export default function MainMenu({ open }) {
       initial={{ y: '-100%', opacity: 0 }}
       animate={open ? { y: 0, opacity: 1 } : { y: '-100%', opacity: 0 }}
       transition={{ duration: 0.45, ease: [0.33, 1, 0.68, 1] }} // accelerazione morbida
-      style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 10 }}>
+      style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1 }}>
       <MainMenuWrapper id='main-menu-wrapper'>
         <MenuLinks id='main-menu-links'>
           <Link to='/isa'>isa</Link>

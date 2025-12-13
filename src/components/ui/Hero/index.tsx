@@ -1,6 +1,5 @@
 import { HeroWrapper } from './styles'
-import { Text } from '../../elements/Text'
-import { TextWrap } from '../../elements/Text/styled'
+import { Flex, MagneticBadge, Text } from '../../elements'
 import { useTheme } from '../../../theme/ThemeProvider'
 
 export default function Hero() {
@@ -26,22 +25,18 @@ export default function Hero() {
         $fontWeight={'normal'}
       />
 
-      <TextWrap
+      <Flex
         id='text-wrapper'
         $position='relative'
-        $display='flex'
         $direction='column'
         $gap={'5rem'}
         $w='100%'
         $padding={'2rem'}
         $userSelect='none'>
-        <Text $w={'100%'} $display='flex' $justifyContent='space-between' $alignItems='center'>
-          <Text
-            as='h1'
-            $fontFamily={theme?.tokens?.fonts?.paragraph}
-            $fontWeight={'normal'}
-            $fontSize='1.17em'
-            children={
+        <Flex $w={'100%'} $display='flex' $justifyContent='space-between' $alignItems='center'>
+          <MagneticBadge
+            variant='punchy'
+            label={
               <Text as='p' $display='flex' $gap='8px'>
                 <Text as='span' $alignItems='end' $display='flex' $direction='column'>
                   <span>Punchy </span>
@@ -53,30 +48,36 @@ export default function Hero() {
           />
           <Text
             as='h3'
-            children={'Isabella de Biasi'}
-            $fontSize='5rem'
+            className='name'
+            children={
+              <>
+                <Text as='span' $fontFamily={theme?.tokens?.fonts?.headingLight}>
+                  Isabella
+                </Text>{' '}
+                <Text as='span' $fontFamily={theme?.tokens?.fonts?.headingLight}>
+                  de Biasi
+                </Text>
+              </>
+            }
             $alignSelf='flex-start'
             $gradient={h3Gradient}
             $gradientClip={true}
           />
-        </Text>
+        </Flex>
 
-        <Text $w={'100%'} $display='flex' $justifyContent='space-between' $alignItems='center'>
+        <Flex $w={'100%'} $display='flex' $justifyContent='space-between' $alignItems='center'>
           <Text
             as='h3'
+            className='name'
             children={'Stefania Galazzo'}
-            $fontSize='5rem'
             $alignSelf='flex-end'
             $gradient={h3Gradient}
             $gradientClip={true}
           />
 
-          <Text
-            as='h1'
-            $fontFamily={theme?.tokens?.fonts?.paragraph}
-            $fontWeight={'normal'}
-            $fontSize='1.17em'
-            children={
+          <MagneticBadge
+            variant='fluid'
+            label={
               <Text as='p' $display='flex' $gap='5px'>
                 <span>—— </span>
                 <Text as='span' $alignItems='start' $display='flex' $direction='column'>
@@ -86,8 +87,8 @@ export default function Hero() {
               </Text>
             }
           />
-        </Text>
-      </TextWrap>
+        </Flex>
+      </Flex>
     </HeroWrapper>
   )
 }
