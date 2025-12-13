@@ -40,6 +40,13 @@ interface TextWrapProps {
   $bg?: string
   $opacity?: string | number
 
+  // Gradient Text
+  $gradient?: string
+  $gradientClip?: boolean
+
+  //interactions
+  $userSelect?: string
+
   // Spacing
   $m?: string | number
   $margin?: string | number
@@ -92,10 +99,15 @@ export const TextWrap = styled.p<TextWrapProps>`
     $justifySelf,
     $gap,
 
+    //interactions
+    $userSelect,
+
     // Color & Effects
     $color,
     $bg,
     $opacity,
+    $gradient,
+    $gradientClip,
 
     // Spacing
     $m,
@@ -123,7 +135,7 @@ export const TextWrap = styled.p<TextWrapProps>`
     text-transform: ${$textTransform || undefined};
     text-overflow: ${$textOverflow || undefined};
     white-space: ${$whiteSpace || undefined};
-    text-align: ${$align || 'center'};
+    text-align: ${$align || undefined};
 
     /* Layout */
     width: ${$width ?? $w ?? 'auto'};
@@ -133,9 +145,12 @@ export const TextWrap = styled.p<TextWrapProps>`
 
     /* Flex defaults (ex TextWrapper) */
     flex-direction: ${$direction || undefined};
-    align-items: ${$alignItems || 'center'};
+    align-items: ${$alignItems || undefined};
     justify-content: ${$justifyContent || 'center'};
-    gap: ${$gap || '1rem'};
+    gap: ${$gap || undefined};
+
+    /* Interactions */
+    user-select: ${$userSelect || undefined};
 
     /* Positioning */
     top: ${$top || undefined};
@@ -148,9 +163,21 @@ export const TextWrap = styled.p<TextWrapProps>`
     justify-self: ${$justifySelf || undefined};
 
     /* Color & Effects */
-    color: ${$color || theme?.colors?.detail3};
+    color: ${$gradient && $gradientClip ? 'transparent' : $color || undefined};
     background-color: ${$bg || undefined};
     opacity: ${$opacity || undefined};
+
+    /* Gradient Text */
+    ${$gradient &&
+    css`
+      background: ${$gradient};
+      ${$gradientClip &&
+      css`
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      `}
+    `}
 
     /* Spacing */
     margin: ${$margin ?? $m ?? undefined};

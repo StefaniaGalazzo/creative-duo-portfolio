@@ -34,6 +34,10 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${({ theme }) => theme?.tokens?.fonts?.paragraph};
   }
     
+  main{
+  display: grid;
+    grid-template-columns: 5% 90% 5%;
+  }
 
   h1, h2, h3, h4, h5, h6, p, span,  {
     margin: 0;        

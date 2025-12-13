@@ -1,8 +1,13 @@
 /* ---------- BURGER MENU ---------- */
 
 import styled, { css } from 'styled-components'
+interface BurgerProps {
+  $open?: boolean
+  $color?: string
+  $bg?: string
+}
 
-export const BurgerWrapper = styled.div<{ $open?: boolean }>`
+export const BurgerWrapper = styled.div<BurgerProps>`
   width: 32px;
   height: 24px;
   display: flex;
@@ -16,10 +21,11 @@ export const BurgerWrapper = styled.div<{ $open?: boolean }>`
   }
 `
 
-export const BurgerLine = styled.div<{ $open?: boolean }>`
+export const BurgerLine = styled.div<BurgerProps>`
   height: 3px;
   width: 100%;
-  background-color: currentColor;
+  color: ${({ $color }) => $color || 'currentColor'};
+  background-color: ${({ $bg }) => $bg ?? 'currentColor'};
   border-radius: 3px;
   transition: 0.25s ease;
   transform-origin: center;

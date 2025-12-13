@@ -1,8 +1,11 @@
 export const defaultColors = {
   // Background & Surfaces
-  surface: '#120242ff',
+  surface: '#0b0229ff',
   transparentLight: '#ffffff3d',
   transparentDark: '#0101013d',
+
+  // main
+  mainColor: '#120242ff',
 
   // Brand colors
   accent1: '#E6FF9D',
@@ -10,10 +13,9 @@ export const defaultColors = {
   accent3: '#ffaccfff',
 
   // Decorative
-  detail1: '#EFC5F7',
-  detail2: '#BDC1FF',
-  detail3: '#DDE0FF',
-  detail4: '#fcecff',
+  detail1: '#eef8d1ff',
+  detail2: 'rgba(190, 194, 252, 1)',
+  detail3: '#ffc5ddff',
 
   // Feedback
   muted: '#C4C5D8',
@@ -26,29 +28,30 @@ export const defaultColors = {
 
 export const vibrantColors = {
   // Background & Surfaces
-  mainBg: '#101010',
-  surface: '#181818',
-  text: '#f5f5f5',
+  surface: '#0b0229ff',
   transparentLight: '#ffffff3d',
   transparentDark: '#0101013d',
 
-  // Brand colors (più saturati per dark mode)
-  accent1: '#4D59FF',
-  accent2: '#656FFF',
+  // main
+  mainColor: '#120242ff',
 
-  // Decorative (adattati per dark)
-  detail1: '#8B4F9F',
-  detail2: '#5D61BF',
-  detail3: '#7D80CF',
-  detail4: '#604864ff',
+  // Brand colors
+  accent1: '#E6FF9D',
+  accent2: '#6633FF',
+  accent3: '#ffaccfff',
+
+  // Decorative
+  detail1: '#eef8d1ff',
+  detail2: 'rgba(190, 194, 252, 1)',
+  detail3: '#ffc5ddff',
 
   // Feedback
-  muted: '#555555',
-  success1: '#2D7A5F',
-  success2: '#0A9C7D',
-  alert1: '#CC6633',
-  alert2: '#FF9955',
-  error: '#FF3322',
+  muted: '#C4C5D8',
+  success1: '#ADEDCB',
+  success2: '#067C5D',
+  alert1: '#FED1B9',
+  alert2: '#F2804B',
+  error: '#DE1503',
 } as const
 
 export type ColorPalette = { [K in keyof typeof defaultColors]: string }

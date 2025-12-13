@@ -38,6 +38,7 @@ interface BoxProps {
   $outlineColor?: string
   $outlineOffset?: string | number
 
+  $color?: string
   $boxShadow?: string
   $overflow?: string
   $zIndex?: string | number
@@ -49,8 +50,9 @@ interface BoxProps {
 
 export const Box = styled.div<BoxProps>`
   padding: ${({ $p }) => $p ?? undefined};
+  color: ${({ $color }) => $color ?? undefined};
   margin: ${({ $m }) => $m ?? undefined};
-  background: ${({ $bg, theme }) => $bg ?? theme?.colors?.background ?? 'transparent'};
+  background: ${({ $bg }) => $bg ?? undefined};
   position: ${({ $position }) => $position ?? 'relative'};
   width: ${({ $width, $w }) => $width || $w || 'auto'};
   height: ${({ $height, $h }) => $height || $h || 'auto'};

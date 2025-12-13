@@ -4,14 +4,14 @@ import styled, { css } from 'styled-components'
 
 const variants = {
   default: css<{ $bg?: string }>`
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     padding: 0.8rem 1.5rem;
-    border-bottom: 1px solid ${({ theme }) => theme?.colors?.accent1 || 'gray'};
+    border-bottom: 1px solid ${({ theme }) => theme?.colors?.detail1 || '#fff'};
     width: 100%;
     background-color: ${({ $bg, theme }) => $bg || theme?.colors?.surface};
-    color: ${({ theme }) => theme?.colors?.detail3 || 'blue'};
+    color: ${({ theme }) => theme?.colors?.detail1 || 'blue'};
   `,
 }
 

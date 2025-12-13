@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 
-export const MainMenuWrapper = styled.div`
+interface MenuStyleProps {
+  $bg?: string
+  $color?: string
+  $borderColor?: string
+}
+
+export const MainMenuWrapper = styled.div<MenuStyleProps>`
   height: 100vh;
   max-height: 100vh;
   width: 100%;
@@ -9,6 +15,9 @@ export const MainMenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  background: ${({ $bg, theme }) => $bg ?? theme?.colors?.detail1 ?? '#111'};
+  color: ${({ $color, theme }) => $color ?? theme?.colors?.surface ?? '#fff'};
 `
 
 export const MenuLinks = styled.div`
