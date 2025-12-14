@@ -20,9 +20,9 @@ export function MagneticBadge({ label, variant = 'punchy' }: MagneticBadgeProps)
   return (
     <BadgeWrapper
       ref={ref}
-      as={motion.div}
       style={magnetic}
       $variant={variant}
+      className="hoverable"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

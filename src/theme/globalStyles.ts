@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
 
   *, *::before, *::after {
     box-sizing: border-box;
+    cursor: none !important; /* Nasconde il cursore di default */
   }
 
   :root {

@@ -69,6 +69,7 @@ export default function Hero() {
         $userSelect='none'>
         <Flex $w={'100%'} $display='flex' $justifyContent='space-between' $alignItems='center'>
           <motion.div
+            className='hoverable'
             initial={{ opacity: 0, scale: 0.8, rotateZ: -10 }}
             animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
