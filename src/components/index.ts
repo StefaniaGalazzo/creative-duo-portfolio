@@ -10,5 +10,21 @@ import { Text } from './elements/Text'
 import SliderSection from './ui/SliderSection/index'
 import { Button } from './elements/Button/index'
 import TextSection from './ui/TextSection'
+import { AnimatedBackground } from './ui/AnimatedBackground'
+
 //
-export { MainMenu, Navbar, IsaLayout, SteLayout, Loading, Flex, Box, Hero, Text, Button, SliderSection, TextSection }
+export {
+  MainMenu,
+  Navbar,
+  IsaLayout,
+  SteLayout,
+  Loading,
+  Flex,
+  Box,
+  Hero,
+  Text,
+  Button,
+  SliderSection,
+  TextSection,
+  AnimatedBackground,
+}

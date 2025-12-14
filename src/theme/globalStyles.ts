@@ -5,8 +5,10 @@ export const GlobalStyles = createGlobalStyle`
 
   *, *::before, *::after {
     box-sizing: border-box;
-    cursor: none !important; /* Nasconde il cursore di default */
   }
+
+
+
 
   :root {
     color-scheme: light dark;
@@ -17,6 +19,18 @@ export const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    // animated background gradient
+    --color-bg1: rgb(108, 0, 162);
+    --color-bg2: rgb(0, 17, 82);
+    --color1: 18, 113, 255;
+    --color2: 221, 74, 255;
+    --color3: 100, 220, 255;
+    --color4: 200, 50, 50;
+    --color5: 180, 180, 50;
+    --color-interactive: 140, 100, 255;
+    --circle-size: 80%;
+    --blending: hard-light;
   }
 
   html, body, :root, #root {
@@ -62,12 +76,24 @@ export const GlobalStyles = createGlobalStyle`
     color: unset;
   }
 
+  // --------  animated background gradient  ---------------------
+
+    @keyframes moveInCircle {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes moveVertical {
+    0% { transform: translateY(-50%); }
+    50% { transform: translateY(50%); }
+    100% { transform: translateY(-50%); }
+  }
+
+  @keyframes moveHorizontal {
+    0% { transform: translateX(-50%) translateY(-10%); }
+    50% { transform: translateX(50%) translateY(10%); }
+    100% { transform: translateX(-50%) translateY(-10%); }
+  }
 
  `
-// // Applica le variabili dal tema
-// :root {
-//   ${({ theme }) =>
-//     Object.entries(theme)
-//       .map(([key, value]) => `${key}: ${value};`)
-//       .join('\n')}
-// }
