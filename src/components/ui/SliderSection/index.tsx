@@ -47,7 +47,7 @@ export default function SliderSection() {
         {pojectCopy &&
           pojectCopy.map((proj, index) => (
             <SliderWrapper key={index} id='slider-section'>
-              <Image $border='2px solid white' width={'50%'} height={'100%'} $aspectRatio='1/1' />
+              <Image $border='2px solid white' width={'auto'} height={'300px'} $aspectRatio='1/1' />
               <Flex $direction='column' $alignItems='start' $gap='1.5' $height={'90%'}>
                 <Text as='h2' children={proj.title} $fontSize='3.2rem' />
                 <Text children={proj.description} />

@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const CursorWrapper = styled.div`
   position: relative;
@@ -6,16 +6,8 @@ export const CursorWrapper = styled.div`
   height: 100%;
 `
 
-const cursorPulse = keyframes`
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-`
-
-const BaseCursorBall = styled.div`
+// Base per entrambi i cursori
+export const CursorBall = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -24,33 +16,53 @@ const BaseCursorBall = styled.div`
   will-change: transform;
 `
 
-export const CursorBallBig = styled(BaseCursorBall)<{ $isHovered?: boolean }>`
+export const CursorInner = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.colors.accent1};
+  transition: transform 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: scale(1);
+`
+/* Pulsazione soft per effetto luce */
+const cursorPulse = keyframes`
+  0%, 10%, 30%, 60%, 100% {
+    transform: scale(2);
+  }
+  20%, 90% {
+    transform: scale(2.12);
+  }
+  20%, 80% {
+    transform: scale(2.3);
+  }
+`
+
+export const CursorBallBig = styled(CursorBall)`
   width: 30px;
   height: 30px;
   mix-blend-mode: difference;
+
+  /* Hover normale */
+  &.cursor-hover ${CursorInner} {
+    transform: scale(2);
+  }
+
+  /* Effetto luce CTA */
+  &.cursor-light ${CursorInner} {
+    background: ${({ theme }) => theme.colors.accent3};
+    transform: scale(8);
+    filter: blur(6px);
+    opacity: 0.8;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.3s ease-out;
+    animation: ${cursorPulse} 1s ease-in-out infinite;
+  }
 `
 
-export const CursorBallSmall = styled(BaseCursorBall)`
+export const CursorBallSmall = styled(CursorBall)`
   width: 10px;
   height: 10px;
-  border-radius: 100px;
+  border-radius: 50%;
   border: 1px solid ${({ theme }) => theme.colors.detail1};
-`
-
-export const CursorInner = styled.div<{ $isHovered?: boolean }>`
-  width: 100%;
-  height: 100%;
-  border-radius: 100px;
-  background: ${({ theme }) => theme.colors.accent2};
-  transform: scale(1);
-  transition: transform 0.28s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform;
-
-  /* Effetto hover su .hoverable e elementi interattivi */
-  ${({ $isHovered }) =>
-    $isHovered &&
-    css`
-      transform: scale(4) !important;
-      animation: ${cursorPulse} 1.5s ease-in-out infinite;
-    `}
+  background: 1px solid ${({ theme }) => theme.colors.accent3};
 `

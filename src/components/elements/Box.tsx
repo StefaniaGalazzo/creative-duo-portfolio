@@ -6,6 +6,7 @@ interface BoxProps {
   $bg?: string
   $position?: string
   $width?: string | number
+  $maxWidth?: string
   $w?: string | number
   $h?: string | number
   $height?: string | number
@@ -55,6 +56,7 @@ export const Box = styled.div<BoxProps>`
   background: ${({ $bg }) => $bg ?? undefined};
   position: ${({ $position }) => $position ?? 'relative'};
   width: ${({ $width, $w }) => $width || $w || 'auto'};
+  max-width: ${({ $maxWidth }) => $maxWidth || undefined};
   height: ${({ $height, $h }) => $height || $h || 'auto'};
   display: ${({ $display }) => $display || 'block'};
   overflow: ${({ $overflow }) => $overflow || 'visible'};

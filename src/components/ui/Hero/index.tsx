@@ -91,14 +91,14 @@ export default function Hero() {
           <TextWindow delay={0.4}>
             <Text
               as='h3'
-              className='name'
+              className='name hoverable'
               $align='right'
               children={
                 <>
-                  <Text as='span' $fontFamily={theme?.tokens?.fonts?.headingLight}>
+                  <Text as='span' $fontFamily={theme?.tokens?.fonts?.headerLight}>
                     Isabella
                   </Text>{' '}
-                  <Text as='span' $fontFamily={theme?.tokens?.fonts?.headingLight}>
+                  <Text as='span' $fontFamily={theme?.tokens?.fonts?.headerLight}>
                     de Biasi
                   </Text>
                 </>
@@ -114,7 +114,7 @@ export default function Hero() {
           <TextWindow delay={0.6}>
             <Text
               as='h3'
-              className='name'
+              className='name hoverable'
               $align='left'
               children={'Stefania Galazzo'}
               $alignSelf='flex-end'

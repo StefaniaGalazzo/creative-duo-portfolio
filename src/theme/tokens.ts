@@ -11,8 +11,8 @@ export const tokens = {
 
   // Typography
   fonts: {
-    headingBold: "'Migra-Extrabold', serif",
-    headingLight: "'Migra-Extralight', serif",
+    headerBold: "'Migra-Extrabold', serif",
+    headerLight: "'Migra-Extralight', serif",
     paragraph: '"Montserrat", sans-serif',
     // system: 'system-ui, sans-serif',
   },

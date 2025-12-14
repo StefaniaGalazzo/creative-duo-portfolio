@@ -10,11 +10,13 @@ export default function AppLayout() {
 
   return (
     <CustomCursor>
-      <Box $p={'0 0 5rem 0'} $w='100%' $bg={theme.colors.surface} $color={theme?.colors?.detail1} id='app-layout'>
+      <Box $w='100%' $bg={theme.colors.surface} $color={theme?.colors?.detail1} id='app-layout'>
         <Navbar />
         <main>
           <Box id='hero-col-1' $borderRight={`2px solid ${theme.colors.detail1}`} $height={'100%'} />
-          <Outlet />
+          <Box $maxWidth='1400px' $p={'0 0 5rem 0'}>
+            <Outlet />
+          </Box>
           <Box id='hero-col-2' $borderLeft={`2px solid ${theme.colors.detail1}`} $height={'100%'} />
         </main>
       </Box>

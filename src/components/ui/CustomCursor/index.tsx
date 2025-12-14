@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
-import { CursorBallBig, CursorBallSmall, CursorInner, CursorWrapper } from './styles'
+import {
+  CursorWrapper,
+  CursorBall,
+  CursorBallBig,
+  CursorBallSmall,
+  CursorInner,
+} from './styles'
 
 type CustomCursorProps = {
   children: React.ReactNode
@@ -9,8 +15,6 @@ export default function CustomCursor({ children }: CustomCursorProps) {
   const bigBallRef = useRef<HTMLDivElement>(null)
   const smallBallRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
-  
   const mousePos = useRef({ x: 0, y: 0 })
   const bigBallPos = useRef({ x: 0, y: 0 })
   const smallBallPos = useRef({ x: 0, y: 0 })
@@ -20,21 +24,10 @@ export default function CustomCursor({ children }: CustomCursorProps) {
     const onMouseMove = (e: MouseEvent) => {
       mousePos.current = { x: e.clientX, y: e.clientY }
       if (!isVisible) setIsVisible(true)
-
-      // Debug: controlla elemento sotto il mouse
-      const target = e.target as HTMLElement
-      const hasHoverable = target.closest('.hoverable')
-      const isInteractive = target.closest('a, button, [role="button"]')
-      
-      // Aggiorna stato hover in real-time
-      setIsHovered(!!(hasHoverable || isInteractive))
     }
 
     const onMouseEnter = () => setIsVisible(true)
-    const onMouseLeave = () => {
-      setIsVisible(false)
-      setIsHovered(false)
-    }
+    const onMouseLeave = () => setIsVisible(false)
 
     const animate = () => {
       // Smooth follow per big ball (più lento, più smooth)
@@ -73,17 +66,38 @@ export default function CustomCursor({ children }: CustomCursorProps) {
     }
   }, [isVisible])
 
-  // Debug: log quando isHovered cambia
   useEffect(() => {
-    console.log('Cursor isHovered:', isHovered)
-  }, [isHovered])
+    const handleHover = (e: MouseEvent) => {
+      const isInteractive = e.target instanceof Element && 
+        e.target.closest('a, button, .hoverable, .block-container, [role="button"]')
+      const isLightCTA = e.target instanceof Element && 
+        e.target.closest('.cursor-light-trigger')
+
+      // Hover normale
+      if (isInteractive) {
+        bigBallRef.current?.classList.add('cursor-hover')
+      } else {
+        bigBallRef.current?.classList.remove('cursor-hover')
+      }
+
+      // Hover CTA (effetto luce WOW)
+      if (isLightCTA) {
+        bigBallRef.current?.classList.add('cursor-light')
+      } else {
+        bigBallRef.current?.classList.remove('cursor-light')
+      }
+    }
+
+    document.addEventListener('mouseover', handleHover)
+    return () => document.removeEventListener('mouseover', handleHover)
+  }, [])
 
   return (
     <CursorWrapper>
       {isVisible && (
         <>
-          <CursorBallBig ref={bigBallRef} $isHovered={isHovered}>
-            <CursorInner $isHovered={isHovered} />
+          <CursorBallBig ref={bigBallRef}>
+            <CursorInner />
           </CursorBallBig>
 
           <CursorBallSmall ref={smallBallRef}>
