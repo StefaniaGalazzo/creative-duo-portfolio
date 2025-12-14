@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   overflow: hidden;
-  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  // background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  background: linear-gradient(40deg, rgb(245 226 255), rgb(201 212 255));
 `
 
 const Gradients = styled.div`
@@ -28,18 +29,21 @@ const BubbleBase = styled.div`
 `
 
 const G1 = styled(BubbleBase)`
-  background: radial-gradient(circle, rgba(var(--color1), 0.8) 0%, rgba(var(--color1), 0) 50%);
+  background: radial-gradient(circle, rgb(183 212 255 / 80%) 0%, rgba(var(--color1), 0) 50%);
+  // background: radial-gradient(circle, rgba(var(--color1), 0.8) 0%, rgba(var(--color1), 0) 50%);
   animation: moveVertical 30s ease infinite;
 `
 
 const G2 = styled(BubbleBase)`
   background: radial-gradient(circle, rgba(var(--color2), 0.8) 0%, rgba(var(--color2), 0) 50%);
+  // background: radial-gradient(circle, rgb(218 185 225 / 72%) 0%, rgba(var(--color2), 0) 50%)
   transform-origin: calc(50% - 400px);
   animation: moveInCircle 20s reverse infinite;
 `
 
 const G3 = styled(BubbleBase)`
   background: radial-gradient(circle, rgba(var(--color3), 0.8) 0%, rgba(var(--color3), 0) 50%);
+  // background: radial-gradient(circle, rgba(var(--color3), 0.8) 0%, rgba(var(--color3), 0) 50%);
   top: calc(50% + 200px);
   left: calc(50% - 500px);
   transform-origin: calc(50% + 400px);
@@ -47,14 +51,16 @@ const G3 = styled(BubbleBase)`
 `
 
 const G4 = styled(BubbleBase)`
-  background: radial-gradient(circle, rgba(var(--color4), 0.8) 0%, rgba(var(--color4), 0) 50%);
+  background: radial-gradient(circle, rgb(243 186 186 / 80%) 0%, rgba(var(--color4), 0) 50%);
+  // background: radial-gradient(circle, rgba(var(--color4), 0.8) 0%, rgba(var(--color4), 0) 50%);
   transform-origin: calc(50% - 200px);
   animation: moveHorizontal 40s ease infinite;
   opacity: 0.7;
 `
 
 const G5 = styled(BubbleBase)`
-  background: radial-gradient(circle, rgba(var(--color5), 0.8) 0%, rgba(var(--color5), 0) 50%);
+  background: radial-gradient(circle, rgb(255 255 191 / 80%) 0%, rgba(var(--color5), 0) 50%);
+  // background: radial-gradient(circle, rgba(var(--color5), 0.8) 0%, rgba(var(--color5), 0) 50%);
   width: calc(var(--circle-size) * 2);
   height: calc(var(--circle-size) * 2);
   top: calc(50% - var(--circle-size));

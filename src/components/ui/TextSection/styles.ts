@@ -16,7 +16,6 @@ const variants = {
     align-items: start;
     justify-content: end;
     gap: 1rem;
-    overflow: hidden;
     text-align: ${({ $textAlign }) => $textAlign || 'left'};
     padding: 8rem 5.5rem;
     border-bottom: 1px solid ${({ theme }) => theme?.colors?.detail1 || '#fff'};

@@ -3,11 +3,11 @@ import { NavWrapper } from './styles'
 import { BurgerMenu } from '../BurgerMenu'
 import MainMenu from '../MainMenu'
 
-export default function Navbar() {
+export default function Navbar({ variant }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <NavWrapper id='nav-wrapper'>
+    <NavWrapper id='nav-wrapper' $variant={variant}>
       <MainMenu open={open} />
       <BurgerMenu open={open} toggle={() => setOpen(!open)} />
     </NavWrapper>

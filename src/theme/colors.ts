@@ -1,6 +1,6 @@
 export const defaultColors = {
   // Background & Surfaces
-  surface: '#0b0229ff',
+  surface: '#130349',
   transparentLight: '#ffffff3d',
   transparentDark: '#0101013d',
 

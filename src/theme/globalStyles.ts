@@ -65,7 +65,7 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1;
   }
 
-  h4, h5, h6, p, span, a, button  {
+  h4, h5, h6, p, a, button  {
     font-family: ${({ theme }) => theme?.tokens?.fonts?.paragraph};
   }
   

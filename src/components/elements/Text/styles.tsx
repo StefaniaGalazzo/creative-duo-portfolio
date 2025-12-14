@@ -165,6 +165,16 @@ export const TextWrap = styled.p<TextWrapProps>`
     background-color: ${$bg || undefined};
     opacity: ${$opacity || undefined};
 
+    /* Spacing */
+    margin: ${$margin ?? $m ?? undefined};
+    padding: ${$padding ?? $p ?? undefined};
+
+    /* Overflow */
+    overflow: ${$overflow || 'hidden'};
+
+    /* Z-index */
+    z-index: ${$zIndex || undefined};
+
     /* Gradient Text */
     ${$gradient &&
     css`
@@ -176,15 +186,5 @@ export const TextWrap = styled.p<TextWrapProps>`
         background-clip: text;
       `}
     `}
-
-    /* Spacing */
-    margin: ${$margin ?? $m ?? undefined};
-    padding: ${$padding ?? $p ?? undefined};
-
-    /* Overflow */
-    overflow: ${$overflow || 'hidden'};
-
-    /* Z-index */
-    z-index: ${$zIndex || undefined};
   `}
 `

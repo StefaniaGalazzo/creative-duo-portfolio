@@ -44,7 +44,7 @@ export const CursorBallBig = styled(CursorBall)`
 
   /* Hover normale */
   &.cursor-hover ${CursorInner} {
-    transform: scale(2);
+    transform: scale(4);
   }
 
   /* Effetto luce CTA */

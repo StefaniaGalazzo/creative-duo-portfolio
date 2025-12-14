@@ -2,10 +2,12 @@ import styled, { css } from 'styled-components'
 
 type FlexProps = {
   $bg?: string
+  $margin?: string
   $direction?: string | 'row' | 'column'
   flex?: string
   h?: string | number
   $w?: string | number
+  $maxWidth?: string | number
   $textAlign?: string
   $wrap: string | 'nowrap' | 'wrap' | 'wrap-reverse'
   $gridTemplateColumns?: string
@@ -24,6 +26,7 @@ type FlexProps = {
     | 'baseline'
   $justifyContent?: string | 'start' | 'center' | 'end' | 'space-between' | 'space-around' | 'space-evenly'
   $boxShadow?: string
+  $fontFamily?: string
   $radius?: string | number
   $gap?: string | number
   $display?: string
@@ -41,6 +44,7 @@ type FlexProps = {
 const FlexWrap = styled.div<FlexProps>`
   position: ${({ $position }) => $position || 'relative'};
   width: ${({ $width, $w }) => $width || $w || 'auto'};
+  max-width: ${({ $maxWidth }) => $maxWidth || undefined};
   height: ${({ $height }) => $height || undefined};
   overflow: ${({ $overflow }) => $overflow || 'visible'};
   transition: ${({ $transition }) => $transition || 'none'};
@@ -60,6 +64,8 @@ const FlexWrap = styled.div<FlexProps>`
   textalign: ${({ $textAlign }) => $textAlign || undefined};
   color: ${({ $color }) => $color || undefined};'};
   user-select: ${({ $userSelect }) => $userSelect || 'auto'};
+  font-family:${({ $fontFamily }) => $fontFamily || undefined};
+  margin:${({ $margin }) => $margin || undefined}
   ${({ full }) =>
     full &&
     css`
