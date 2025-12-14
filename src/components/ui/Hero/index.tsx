@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { HeroWrapper } from './styles'
-import { Flex, MagneticBadge, Text } from '../../elements'
+import { Box, Flex, MagneticBadge, Text } from '../../elements'
 import { useTheme } from '../../../theme/ThemeProvider'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
@@ -25,9 +25,9 @@ export function AnimatedName({ firstLine, secondLine, gradient, fontFamily }: An
     // Animiamo solo opacity e rimuoviamo completamente il transform alla fine
     gsap.fromTo(
       letters1,
-      { 
+      {
         opacity: 0,
-        y: 50
+        y: 50,
       },
       {
         opacity: 1,
@@ -41,9 +41,9 @@ export function AnimatedName({ firstLine, secondLine, gradient, fontFamily }: An
 
     gsap.fromTo(
       letters2,
-      { 
+      {
         opacity: 0,
-        y: 50
+        y: 50,
       },
       {
         opacity: 1,
@@ -68,8 +68,6 @@ export function AnimatedName({ firstLine, secondLine, gradient, fontFamily }: An
     <Text
       as='h3'
       className='name hoverable'
-      $align='right'
-      $alignSelf='end'
       $display='flex'
       $direction='column'
       $gradient={gradient}
@@ -113,7 +111,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.8, rotateZ: -10 }}
         animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        style={{ transformStyle: 'preserve-3d', position: 'absolute', top: '5%', left: '5%' }}>
+        style={{ transformStyle: 'preserve-3d', position: 'absolute', bottom: '20%', right: '8%' }}>
         <MagneticBadge
           variant='punchy'
           label={
@@ -131,7 +129,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.8, rotateZ: 10 }}
         animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
         transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        style={{ transformStyle: 'preserve-3d', position: 'absolute', bottom: '5%', right: '5%' }}
+        style={{ transformStyle: 'preserve-3d', position: 'absolute', top: '20%', left: '8%' }}
         href='/stefania'>
         <MagneticBadge
           variant='fluid'
@@ -146,23 +144,38 @@ export default function Hero() {
           }
         />
       </motion.a>
-      <Flex
-        id='text-wrapper'
-        $position='relative'
-        $maxWidth='1000px'
-        $w='100%'
-        $padding={'2rem'}
-        $userSelect='none'
-        $justifyContent='space-between'
-        $fontFamily={theme?.tokens?.fonts?.headerLight}>
-        <AnimatedName firstLine='Stefania' secondLine='Galazzo' gradient={h3Gradient} />
+      <Flex id='text-wrapper' $height={'75%'}>
+        <Flex
+          $margin='auto 0 0 0'
+          $height='fit-content'
+          $padding={'2rem'}
+          $userSelect='none'
+          $fontFamily={theme?.tokens?.fonts?.headerLight}>
+          <AnimatedName firstLine='Stefania' secondLine='Galazzo' gradient={h3Gradient2} />
+        </Flex>
 
-        <AnimatedName
-          firstLine='Isabella'
-          secondLine='de Biasi'
-          fontFamily={theme?.tokens?.fonts?.headerLight}
-          gradient={h3Gradient2}
+        <Box
+          $width='2px' // spessore della linea
+          $height='90%' // altezza della linea
+          $bg={theme.colors.accent1} // colore della linea
+          style={{
+            transform: 'rotate(12deg)',
+            margin: 'auto 2rem',
+          }}
         />
+
+        <Flex
+          $height='fit-content'
+          $padding={'2rem'}
+          $userSelect='none'
+          $fontFamily={theme?.tokens?.fonts?.headerLight}>
+          <AnimatedName
+            firstLine='Isabella'
+            secondLine='de Biasi'
+            fontFamily={theme?.tokens?.fonts?.headerLight}
+            gradient={h3Gradient2}
+          />
+        </Flex>
       </Flex>
     </HeroWrapper>
   )

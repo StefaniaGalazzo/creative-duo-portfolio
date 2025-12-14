@@ -9,7 +9,7 @@ type FlexProps = {
   $w?: string | number
   $maxWidth?: string | number
   $textAlign?: string
-  $wrap: string | 'nowrap' | 'wrap' | 'wrap-reverse'
+  $wrap?: string | 'nowrap' | 'wrap' | 'wrap-reverse'
   $gridTemplateColumns?: string
   $height?: string | number
   $width?: string | number
@@ -60,12 +60,13 @@ const FlexWrap = styled.div<FlexProps>`
   box-shadow: ${({ $boxShadow }) => $boxShadow || 'none'};
   gap: ${({ $gap }) => ($gap ? `${$gap}` : undefined)};
   background: ${({ $bg }) => ($bg ? `${$bg}` : undefined)};
-  padding: ${({ $padding }) => $padding || undefined};
-  textalign: ${({ $textAlign }) => $textAlign || undefined};
-  color: ${({ $color }) => $color || undefined};'};
+  padding: ${({ $padding, $p }) => $padding || ($p ? `${$p}` : undefined)};
+  text-align: ${({ $textAlign }) => $textAlign || undefined};
+  color: ${({ $color }) => $color || undefined};
   user-select: ${({ $userSelect }) => $userSelect || 'auto'};
-  font-family:${({ $fontFamily }) => $fontFamily || undefined};
-  margin:${({ $margin }) => $margin || undefined}
+  font-family: ${({ $fontFamily }) => $fontFamily || undefined};
+  margin: ${({ $margin }) => $margin || undefined};
+
   ${({ full }) =>
     full &&
     css`

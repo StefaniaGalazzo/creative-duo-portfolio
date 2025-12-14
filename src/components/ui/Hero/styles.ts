@@ -23,13 +23,6 @@ export const HeroWrapper = styled.div<HeroWrapperProps>`
   .name {
     font-size: 8rem;
   }
-  .name span:last-child {
-    // white-space: nowrap;
-    tansform: translateY(30%);
-  }
-  .name:last-child {
-    tansform: translateY(30%);
-  }
 
   // ------ MEDIA QUERY ------//
   /* Desktop */
