@@ -26,34 +26,42 @@ const router = createBrowserRouter([
     path: '/',
     element: <AppLayout />,
     errorElement: <ErrorPage />,
-    handle: { title: 'Home' },
     children: [
-      { index: true, element: wrap(Home) },
       {
-        path: 'isabella',
-        element: <IsaLayout />,
-        children: [
-          {
-            index: true,
-            element: wrap(Isa),
-            handle: { pageTitle: 'Isabella De Biasi' },
-          },
-        ],
+        index: true,
+        element: wrap(Home),
+        handle: { title: 'Home' },
       },
-      {
-        path: 'stefania',
-        element: <SteLayout />,
-        children: [
-          {
-            index: true,
-            element: wrap(Ste),
-            handle: { pageTitle: 'Isabella De Biasi' },
-          },
-        ],
-      },
-      // 👇 pagina 404 catch-all
-      { path: '*', element: <NotFound /> },
     ],
+  },
+
+  {
+    path: '/isabella',
+    element: <IsaLayout />,
+    children: [
+      {
+        index: true,
+        element: wrap(Isa),
+        handle: { pageTitle: 'Isabella De Biasi' },
+      },
+    ],
+  },
+
+  {
+    path: '/stefania',
+    element: <SteLayout />,
+    children: [
+      {
+        index: true,
+        element: wrap(Ste),
+        handle: { pageTitle: 'Stefania Galazzo' },
+      },
+    ],
+  },
+
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ])
 

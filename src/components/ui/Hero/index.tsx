@@ -123,11 +123,12 @@ export default function Hero() {
             />
           </TextWindow>
 
-          <motion.div
+          <motion.a
             initial={{ opacity: 0, scale: 0.8, rotateZ: 10 }}
             animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            style={{ transformStyle: 'preserve-3d' }}>
+            style={{ transformStyle: 'preserve-3d' }}
+            href='/ste'>
             <MagneticBadge
               variant='fluid'
               label={
@@ -140,7 +141,7 @@ export default function Hero() {
                 </Text>
               }
             />
-          </motion.div>
+          </motion.a>
         </Flex>
       </Flex>
     </HeroWrapper>
