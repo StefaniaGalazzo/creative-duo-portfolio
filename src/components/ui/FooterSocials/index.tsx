@@ -5,19 +5,28 @@ import { SOCIALS } from '../../../utilities/constants'
 import { FooterGrid, SocialItem, SocialLinksRow } from './styles'
 import { Text } from '../../elements'
 
-export function FooterSocials() {
+type FooterSocialsProps = {
+  variant?: 'home' | 'menu'
+}
+
+export function FooterSocials({ variant = 'menu' }: FooterSocialsProps) {
   const [active, setActive] = useState<string | null>(null)
 
   return (
-    <FooterGrid>
+    <FooterGrid $variant={variant}>
       {SOCIALS.map((social) => {
         const { mainLabel, icon: Icon, label_1, label_2, href_1, href_2 } = social
 
         return (
-          <SocialItem key={mainLabel} onMouseEnter={() => setActive(mainLabel)} onMouseLeave={() => setActive(null)}>
+          <SocialItem
+            $variant={variant}
+            key={mainLabel}
+            onMouseEnter={() => setActive(mainLabel)}
+            onMouseLeave={() => setActive(null)}>
             <AnimatePresence mode='wait'>
               {active === mainLabel ? (
                 <SocialLinksRow
+                  $variant={variant}
                   as={motion.div}
                   key='links'
                   initial={{ opacity: 0, y: 6 }}

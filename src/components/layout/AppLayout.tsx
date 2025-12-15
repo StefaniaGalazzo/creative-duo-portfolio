@@ -4,6 +4,7 @@ import { Navbar } from '..'
 import { Box } from '../elements/Box'
 import { useTheme } from '../../theme/ThemeProvider'
 import CustomCursor from '../ui/CustomCursor'
+import { FooterSocials } from '../ui/FooterSocials'
 
 export default function AppLayout() {
   const { theme } = useTheme()
@@ -16,6 +17,7 @@ export default function AppLayout() {
           <Box id='hero-col-1' $borderRight={`2px solid ${theme.colors.detail1}`} $height={'100%'} />
           <Box $maxWidth='1400px' $p={'0 0 5rem 0'}>
             <Outlet />
+            <FooterSocials variant='home' />
           </Box>
           <Box id='hero-col-2' $borderLeft={`2px solid ${theme.colors.detail1}`} $height={'100%'} />
         </main>

@@ -89,7 +89,7 @@ export default function TextSection({
 
   return (
     <TxtSectionWrapper>
-      <Text as='h1' $fontSize='3rem' $fontFamily={theme?.tokens?.fonts?.headerBold}>
+      <Text as='h1' $fontSize='3rem' $fontFamily={theme?.tokens?.fonts?.headerBold} className='hoverable'>
         {title}
       </Text>
 

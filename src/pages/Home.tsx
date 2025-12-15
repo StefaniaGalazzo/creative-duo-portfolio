@@ -11,8 +11,8 @@ Ci divertiamo a sfornare idee creative che lasciano il segno, tra colori, immagi
       />
       <SliderSection />
       <TextSection
-        title='Siamo diverse ed è questo il bello'
-        description='I nostri progetti sono scontro di idee, che finiscono sempre per creare  tempeste perfette. Perché un buon brainstorming, alla fine, non è altro che questo. Le nostre idee sono come lunghissime frasi che arrivano sempre, inevitabilmente, a un punto. 
+        title='Andiamo al punto'
+        description='I nostri progetti sono scontro di idee, che finiscono sempre per creare  tempeste perfette. Parliamo, pensiamo, non buttiamo via niente, neanche l’idea più brutta finché non troviamo quella giusta. Insomma, non importa quanto sia lunga una frase: alla fine arrivano sempre, inevitabilmente, al punto. 
 
 Un punto che non è mai solo la fine di una frase, ma l’inizio di un nuovo paragrafo. 
 

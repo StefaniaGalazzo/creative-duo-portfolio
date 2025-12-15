@@ -16,7 +16,7 @@ export default function MainMenu({ open }) {
           <Link to='/stefania'>Stefania</Link>
         </MenuLinks>
 
-        <FooterSocials />
+        <FooterSocials variant='menu' />
       </MainMenuWrapper>
     </motion.div>
   )

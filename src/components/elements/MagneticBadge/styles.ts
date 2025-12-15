@@ -76,7 +76,7 @@ const liquidFall = keyframes`
 
 const variants = {
   punchy: css`
-    padding: 1rem 0 1rem 1rem;
+    // padding: 1rem 0 1rem 1rem;
     width: 160px;
     &::after {
       content: '';
@@ -96,7 +96,7 @@ const variants = {
     }
   `,
   fluid: css`
-    padding: 1rem 1rem 1rem 0;
+    // padding: 1rem 1rem 1rem 0;
     width: 160px;
     .fluid-fill {
       position: absolute;
