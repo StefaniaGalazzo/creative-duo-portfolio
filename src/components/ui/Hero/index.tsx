@@ -171,7 +171,7 @@ export default function Hero() {
           $fontFamily={theme?.tokens?.fonts?.headerLight}>
           <AnimatedName
             firstLine='Isabella'
-            secondLine='de Biasi'
+            secondLine='De Biasi'
             fontFamily={theme?.tokens?.fonts?.headerLight}
             gradient={h3Gradient2}
           />

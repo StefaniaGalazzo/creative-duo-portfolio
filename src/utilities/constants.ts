@@ -1,15 +1,15 @@
 import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 
-export const pojectCopy = [
+export const projectCopy = [
   {
-    title: 'Titolone pazzesco 1',
+    title: 'Ludwig',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     buttonText: 'Take a tour',
     buttonLink: '#',
   },
   {
-    title: 'Titolone pazzesco 2',
+    title: 'Blogwig',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     buttonText: 'Take a tour',

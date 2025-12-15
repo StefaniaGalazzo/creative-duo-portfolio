@@ -1,15 +1,7 @@
 import { useTheme } from '../../../theme/ThemeProvider'
 import { Text } from '../../elements'
 import { TxtSectionWrapper } from './styles'
-
-// styles.ts
 import styled from 'styled-components'
-
-// export const TxtSectionWrapper = styled.section`
-//   width: 100%;
-//   padding: 8rem 3rem;
-//   border-top: ;
-// `
 
 export const Description = styled.p`
   display: flex;
