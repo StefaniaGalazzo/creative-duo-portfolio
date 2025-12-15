@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import { MainMenuWrapper, MenuLinks, FooterGrid } from './styles'
+import { MainMenuWrapper, MenuLinks } from './styles'
 import { Link } from 'react-router-dom'
+import { FooterSocials } from '../FooterSocials'
 
 export default function MainMenu({ open }) {
   return (
@@ -11,21 +12,11 @@ export default function MainMenu({ open }) {
       style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1 }}>
       <MainMenuWrapper id='main-menu-wrapper'>
         <MenuLinks id='main-menu-links'>
-          <Link to='/isa'>isa</Link>
-          <Link to='/ste'>ste</Link>
+          <Link to='/isabella'>Isabella</Link>
+          <Link to='/stefania'>Stefania</Link>
         </MenuLinks>
 
-        <FooterGrid id='main-menu-footer'>
-          <Link to='https://linkedin.com' target='_blank'>
-            linkedin
-          </Link>
-          <Link to='https://instagram.com' target='_blank'>
-            instagram
-          </Link>
-          <Link to='https://github.com' target='_blank'>
-            github
-          </Link>
-        </FooterGrid>
+        <FooterSocials />
       </MainMenuWrapper>
     </motion.div>
   )

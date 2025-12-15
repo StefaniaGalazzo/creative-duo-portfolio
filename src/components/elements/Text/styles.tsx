@@ -61,6 +61,10 @@ interface TextWrapProps {
 
   // Z-index
   $zIndex?: string | number
+
+  //for tag 'a'
+  href?: string
+  target?: string
 }
 
 export const TextWrap = styled.p<TextWrapProps>`
