@@ -13,6 +13,7 @@ export function useHorizontalScroll(options: UseHorizontalScrollOptions = {}) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
   const scrollX = useMotionValue(0)
+  const lastScrollYProgress = useRef(0)
 
   // Ottieni scroll progress della pagina
   const { scrollYProgress } = useScroll({
@@ -73,23 +74,32 @@ export function useHorizontalScroll(options: UseHorizontalScrollOptions = {}) {
     return () => container.removeEventListener('wheel', handleWheel)
   }, [isHovered, scrollX])
 
-  // Sincronizza con lo scroll della pagina quando non è hover
+  // Sincronizza con lo scroll della pagina SOLO quando è hover
   useEffect(() => {
-    if (!isHovered) {
-      const unsubscribe = x.on('change', (latest) => {
-        scrollX.set(latest)
+    if (isHovered) {
+      const unsubscribe = scrollYProgress.on('change', (latest) => {
+        const delta = latest - lastScrollYProgress.current
+        lastScrollYProgress.current = latest
+        
+        const scrollDistance = getScrollDistance()
+        const currentX = scrollX.get()
+        const deltaX = delta * scrollDistance * speed
+        const newX = currentX + deltaX
+        
+        // Applica il movimento relativo, non assoluto
+        scrollX.set(Math.max(scrollDistance, Math.min(0, newX)))
       })
       return unsubscribe
+    } else {
+      // Aggiorna il riferimento anche quando non in hover per evitare salti
+      lastScrollYProgress.current = scrollYProgress.get()
     }
-  }, [isHovered, x, scrollX])
+  }, [isHovered, scrollYProgress, scrollX, speed])
 
   // Aggiorna la distanza quando il contenuto cambia
   useEffect(() => {
     const updateDistance = () => {
-      const distance = getScrollDistance()
-      if (!isHovered) {
-        scrollX.set(scrollYProgress.get() * distance * speed)
-      }
+      // Non fare nulla qui, manteniamo la posizione corrente
     }
 
     const resizeObserver = new ResizeObserver(updateDistance)
@@ -98,10 +108,19 @@ export function useHorizontalScroll(options: UseHorizontalScrollOptions = {}) {
     }
 
     return () => resizeObserver.disconnect()
-  }, [speed, scrollYProgress, scrollX, isHovered])
+  }, [])
 
-  const handleMouseEnter = () => setIsHovered(true)
-  const handleMouseLeave = () => setIsHovered(false)
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+    // Aggiorna il riferimento per evitare salti
+    lastScrollYProgress.current = scrollYProgress.get()
+  }
+  
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+    // Aggiorna il riferimento per mantenere la posizione
+    lastScrollYProgress.current = scrollYProgress.get()
+  }
 
   return {
     containerRef,

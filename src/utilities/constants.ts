@@ -1,5 +1,36 @@
 import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 
+export const pojectCopy = [
+  {
+    title: 'Titolone pazzesco 1',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    buttonText: 'Take a tour',
+    buttonLink: '#',
+  },
+  {
+    title: 'Titolone pazzesco 2',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    buttonText: 'Take a tour',
+    buttonLink: '#',
+  },
+  {
+    title: 'Titolone pazzesco 3',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    buttonText: 'Take a tour',
+    buttonLink: '#',
+  },
+  {
+    title: 'Titolone pazzesco 4',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    buttonText: 'Take a tour',
+    buttonLink: '#',
+  },
+]
+
 // mainly used in FooterSocials
 export const SOCIALS = [
   {
