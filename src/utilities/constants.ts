@@ -31,7 +31,7 @@ export const projectCopy = [
       'Tiraditto, la riscoperta del grano gentile e del frumento di Sicilia. Realizzazione brand identity, food photography, packaging. ',
     buttonText: 'Fluid Designer',
     buttonLink: '#',
-    imgSrc: '/ludwig.png',
+    imgSrc: '/tiraditto.png',
   },
   {
     title: 'Kidimpro: Movimento e improvvisazione',
@@ -39,7 +39,7 @@ export const projectCopy = [
       'Un modo di esplorare insieme i gesti, il movimento, i suoni, la voce e la creatività. Realizzazione brand identity, motion graphic, postcards, merchandising, wordpress.',
     buttonText: 'Fluid Designer',
     buttonLink: '#',
-    imgSrc: '/ludwig.png',
+    imgSrc: '/kidimpro.jpg',
   },
 ]
 
