@@ -25,7 +25,6 @@ export function useMagnetic(ref: React.RefObject<HTMLElement>, strength = 0.08, 
       const ny = vy / distance
 
       const force = Math.min(distance * strength, maxOffset)
-      // const force = Math.min(Math.pow(distance, 0.85) * strength, maxOffset)
 
       x.set(nx * force)
       y.set(ny * force)

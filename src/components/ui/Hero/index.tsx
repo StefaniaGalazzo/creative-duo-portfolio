@@ -105,45 +105,68 @@ export default function Hero() {
         $fontFamily={theme?.tokens?.fonts?.paragraph}
         $fontWeight={'normal'}
       />
-      <motion.a
-        className='hoverable'
-        href='/isabella'
-        initial={{ opacity: 0, scale: 0.8, rotateZ: -10 }}
-        animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
-        transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        style={{ transformStyle: 'preserve-3d', position: 'absolute', bottom: '20%', right: '8%' }}>
-        <MagneticBadge
-          variant='punchy'
-          label={
-            <Text as='p' $display='flex' $gap='8px'>
-              <Text as='span' $alignItems='end' $display='flex' $direction='column'>
-                <span>Punchy </span>
-                <span>Copiwriter</span>
+
+      {/* CRITICAL FIX: Badge container FUORI dal flex flow */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          zIndex: 10,
+        }}>
+        <motion.a
+          className='hoverable'
+          href='/isabella'
+          initial={{ opacity: 0, scale: 0.8, rotateZ: -10 }}
+          animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          style={{
+            transformStyle: 'preserve-3d',
+            position: 'absolute',
+            bottom: '20%',
+            right: '8%',
+            pointerEvents: 'auto',
+          }}>
+          <MagneticBadge
+            variant='punchy'
+            label={
+              <Text as='p' $display='flex' $gap='8px'>
+                <Text as='span' $alignItems='end' $display='flex' $direction='column'>
+                  <span>Punchy </span>
+                  <span>Copiwriter</span>
+                </Text>
+                <span>—— </span>
               </Text>
-              <span>—— </span>
-            </Text>
-          }
-        />
-      </motion.a>
-      <motion.a
-        initial={{ opacity: 0, scale: 0.8, rotateZ: 10 }}
-        animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
-        transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        style={{ transformStyle: 'preserve-3d', position: 'absolute', top: '20%', left: '8%' }}
-        href='/stefania'>
-        <MagneticBadge
-          variant='fluid'
-          label={
-            <Text as='p' $display='flex' $gap='5px'>
-              <span>—— </span>
-              <Text as='span' $alignItems='start' $display='flex' $direction='column'>
-                <span>Fluid </span>
-                <span>Designer</span>
+            }
+          />
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0, scale: 0.8, rotateZ: 10 }}
+          animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          style={{
+            transformStyle: 'preserve-3d',
+            position: 'absolute',
+            top: '20%',
+            left: '8%',
+            pointerEvents: 'auto',
+          }}
+          href='/stefania'>
+          <MagneticBadge
+            variant='fluid'
+            label={
+              <Text as='p' $display='flex' $gap='5px'>
+                <span>—— </span>
+                <Text as='span' $alignItems='start' $display='flex' $direction='column'>
+                  <span>Fluid </span>
+                  <span>Designer</span>
+                </Text>
               </Text>
-            </Text>
-          }
-        />
-      </motion.a>
+            }
+          />
+        </motion.a>
+      </div>
+
       <Flex id='text-wrapper' $height={'75%'}>
         <Flex
           $margin='auto 0 0 0'
@@ -155,9 +178,9 @@ export default function Hero() {
         </Flex>
 
         <Box
-          $width='2px' // spessore della linea
-          $height='90%' // altezza della linea
-          $bg={theme.colors.accent1} // colore della linea
+          $width='2px'
+          $height='90%'
+          $bg={theme.colors.accent1}
           style={{
             transform: 'rotate(12deg)',
             margin: 'auto 2rem',

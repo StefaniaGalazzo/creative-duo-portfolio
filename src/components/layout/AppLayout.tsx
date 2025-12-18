@@ -15,7 +15,7 @@ export default function AppLayout() {
         <Navbar />
         <main>
           <Box id='hero-col-1' $borderRight={`2px solid ${theme.colors.detail1}`} $height={'100%'} />
-          <Box $maxWidth='1400px' $p={'0 0 5rem 0'}>
+          <Box $maxWidth='1400px' $p={'0 0 0'}>
             <Outlet />
             <FooterSocials variant='home' />
           </Box>

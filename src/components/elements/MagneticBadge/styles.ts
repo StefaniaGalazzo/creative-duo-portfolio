@@ -76,8 +76,8 @@ const liquidFall = keyframes`
 
 const variants = {
   punchy: css`
-    // padding: 1rem 0 1rem 1rem;
     width: 160px;
+
     &::after {
       content: '';
       position: absolute;
@@ -86,7 +86,9 @@ const variants = {
       transform: scale(0);
       transition: transform 0.15s ease-out;
       z-index: 1;
+      pointer-events: none;
     }
+
     &:hover {
       color: ${({ theme }) => theme.colors.surface};
     }
@@ -96,12 +98,13 @@ const variants = {
     }
   `,
   fluid: css`
-    // padding: 1rem 1rem 1rem 0;
     width: 160px;
+
     .fluid-fill {
       position: absolute;
       inset: 0;
       z-index: 1;
+      pointer-events: none;
     }
 
     .fluid-fill path {
@@ -122,12 +125,13 @@ export const BadgeWrapper = styled(motion.div)<{ $variant: 'punchy' | 'fluid' }>
 
   aspect-ratio: 1/1;
   border: 1px solid ${({ theme }) => theme.colors.detail1};
+  box-sizing: border-box;
 
   overflow: hidden;
   cursor: pointer;
-  user-select: none;
+  // user-select: none;
 
-  span {
+  .badge-label {
     position: relative;
     z-index: 2;
     transition: color 0.3s ease;
@@ -146,6 +150,7 @@ export const FluidFillLayer = styled.div`
   inset: 0;
   z-index: 1;
   background: ${({ theme }) => theme.colors.detail1};
+  pointer-events: none;
 
   clip-path: polygon(0% 100%, 25% 100%, 50% 100%, 75% 100%, 100% 100%, 100% 100%, 0% 100%);
 

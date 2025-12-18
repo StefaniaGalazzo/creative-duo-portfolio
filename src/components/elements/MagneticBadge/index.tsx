@@ -17,17 +17,27 @@ export function MagneticBadge({ label, variant = 'punchy' }: MagneticBadgeProps)
   const isFluid = variant === 'fluid'
   const [isHovered, setIsHovered] = useState(false)
 
+  // DEBUG: Log hover events
+  const handleMouseEnter = () => {
+    console.log(`[${variant}] MouseEnter su BadgeWrapper`)
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    console.log(`[${variant}] MouseLeave da BadgeWrapper`)
+    setIsHovered(false)
+  }
+
   return (
     <BadgeWrapper
       ref={ref}
       style={magnetic}
       $variant={variant}
-      className="hoverable"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+      className='hoverable'
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
       {isFluid ? <FluidFill isHovered={isHovered} /> : <FillLayer $variant={variant} />}
-      <span>{label}</span>
+      <div className='badge-label'>{label}</div>
     </BadgeWrapper>
   )
 }
