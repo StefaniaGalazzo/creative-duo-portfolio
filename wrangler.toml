@@ -1,0 +1,6 @@
+name = "creative-duo-portfolio"
+compatibility_date = "2024-12-18"
+pages_build_output_dir = "dist"
+
+# This is optional - only if you want to use Wrangler CLI for local testing
+# You don't need this for Cloudflare Pages deployment via Git

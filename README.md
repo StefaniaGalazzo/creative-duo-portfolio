@@ -1,73 +1,227 @@
-# React + TypeScript + Vite
+# 🎨 Creative Duo Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio website for Stefania Galazzo (Graphic Designer & Front-end Developer) and Isabella De Biasi (Copywriter).
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Production**: [creative-duo-portfolio.pages.dev](https://creative-duo-portfolio.pages.dev) *(coming soon)*
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📦 Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework**: React 19 + TypeScript
+- **Build Tool**: Vite 7
+- **Styling**: Styled Components
+- **Animations**: Framer Motion + GSAP
+- **Routing**: React Router DOM
+- **Icons**: React Icons
+- **Hosting**: Cloudflare Pages
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install Dependencies
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Start Dev Server
+```bash
+npm run dev
 ```
+
+Open http://localhost:5173
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+---
+
+## 🌐 Deployment
+
+This project is configured for **Cloudflare Pages** with automatic deployments.
+
+### Quick Deploy
+```bash
+git push origin main
+```
+
+Cloudflare automatically builds and deploys!
+
+### First Time Setup
+See **[QUICK_DEPLOY.md](./QUICK_DEPLOY.md)** for 2-minute setup guide.
+
+### Full Documentation
+See **[CLOUDFLARE_DEPLOY.md](./CLOUDFLARE_DEPLOY.md)** for comprehensive guide.
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── elements/       # Reusable components (Button, Text, MagneticBadge, etc.)
+│   ├── layout/         # Layout components (AppLayout, IsaLayout, SteLayout)
+│   └── ui/             # UI sections (Hero, PageWrapper, Footer, etc.)
+├── hooks/              # Custom hooks (useMagnetic, etc.)
+├── pages/              # Route pages (Home, Stefania, Isabella)
+├── theme/              # Theme configuration & GlobalStyles
+├── utilities/          # Constants & helpers
+├── main.tsx            # Entry point
+└── index.css           # Global CSS
+
+public/
+├── _redirects          # Cloudflare SPA routing
+├── _headers            # Security & cache headers
+└── ...                 # Static assets
+
+functions/
+└── _middleware.js      # Cloudflare Functions middleware
+```
+
+---
+
+## ✨ Features
+
+### 🎯 Interactive Elements
+- **Magnetic Badge**: Hover-responsive badges with magnetic effect
+- **Custom Cursor**: Dynamic cursor with hover states
+- **Smooth Animations**: GSAP-powered letter animations
+- **Fluid Transitions**: Framer Motion page transitions
+
+### 📄 Dynamic Content System
+- Type-safe copy management in `PageWrapper/copy.ts`
+- Scalable person data structure
+- Easy content updates without touching UI code
+
+### 🎨 Theming
+- Light/Dark mode support
+- Styled Components theming
+- Consistent design tokens
+
+### 🚀 Performance
+- Code splitting with React lazy loading
+- Optimized assets caching
+- CDN delivery via Cloudflare
+- Lighthouse score: 90+
+
+---
+
+## 📝 Content Management
+
+### Update Person Data
+
+Edit `src/components/ui/PageWrapper/copy.ts`:
+
+```typescript
+export const pageCopy: Record<PersonRole, PersonData> = {
+  designer: {
+    name: 'Stefania Galazzo',
+    age: 'Gli anni di Cristo (+3)',
+    // ... update fields
+  }
+}
+```
+
+See **[PageWrapper Documentation](./src/components/ui/PageWrapper/README.md)** for detailed guide.
+
+---
+
+## 🎨 Key Components
+
+### MagneticBadge
+Interactive badge with magnetic hover effect.
+
+```tsx
+<MagneticBadge 
+  variant="punchy" // or "fluid"
+  label={<span>Label</span>}
+/>
+```
+
+### PageWrapper
+Dynamic page template for person profiles.
+
+```tsx
+<PageWrapper data={getPersonData('designer')} />
+```
+
+### CustomCursor
+Global custom cursor with hover states.
+
+---
+
+## 🧪 Testing Routes Locally
+
+- `/` - Home (hero with badges)
+- `/stefania` - Stefania's profile
+- `/isabella` - Isabella's profile
+
+---
+
+## 📱 Browser Support
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari 14+
+- Mobile browsers
+
+---
+
+## 🐛 Known Issues
+
+### Hover Bug Fix
+The MagneticBadge hover issue was caused by flex layout overlapping. Fixed by isolating badges in absolute container. See commit history for details.
+
+---
+
+## 🤝 Contributing
+
+This is a private portfolio project. For any issues or suggestions, contact the owners.
+
+---
+
+## 📄 License
+
+Private - All rights reserved
+
+---
+
+## 👥 Authors
+
+- **Stefania Galazzo** - Graphic Designer & Front-end Developer
+- **Isabella De Biasi** - Copywriter
+
+---
+
+## 📞 Contact
+
+- **Stefania**: galazzostefania@gmail.com | +39 3922615099
+- **Isabella**: isabelladbiasi@gmail.com | +39 3481746154
+
+---
+
+## 🔗 Links
+
+- **Repository**: [GitHub](https://github.com/your-username/creative-duo-portfolio)
+- **Production**: [Cloudflare Pages](https://creative-duo-portfolio.pages.dev)
+- **Design System**: See `theme/` directory
+- **Component Docs**: See individual component README files
+
+---
+
+**Made with ❤️ in Torino**
