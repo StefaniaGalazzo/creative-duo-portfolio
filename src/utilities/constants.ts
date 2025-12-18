@@ -2,10 +2,10 @@ import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 
 export const projectCopy = [
   {
-    title: 'Blogwig: Read well, write better.',
+    title: 'Blogwig: Read well, write better',
     description:
       'Visual per articoli di divulgazione, claim, veri e propri spazi divulgativi che parlino dell’azienda a cui appartengono e che sappiano arrivare al cuore di chi li legge.',
-    buttonText: 'Take a tour',
+    buttonText: 'Punchy Copy',
     buttonLink: '#',
     imgSrc: '/blogwig.png',
   },
@@ -13,23 +13,31 @@ export const projectCopy = [
     title: 'Ludwig.guru',
     description:
       'Realizzazione e ottimizzazione copy in ottica SEO, sviluppo layout desktop e mobile, tema applicazione.',
-    buttonText: 'Take a tour',
+    buttonText: 'Together',
     buttonLink: '#',
     imgSrc: '/ludwig.png',
   },
   {
-    title: 'Titolone pazzesco 3',
+    title: 'Blogwig community',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    buttonText: 'Take a tour',
+      'Visual per articoli di divulgazione, claim, veri e propri spazi divulgativi che parlino dell’azienda a cui appartengono e che sappiano arrivare al cuore di chi li legge.',
+    buttonText: 'Together',
     buttonLink: '#',
     imgSrc: '/ludwig.png',
   },
   {
-    title: 'Titolone pazzesco 4',
+    title: 'Tiraditto: Grano gentile ritrovato',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    buttonText: 'Take a tour',
+      'Tiraditto, la riscoperta del grano gentile e del frumento di Sicilia. Realizzazione brand identity, food photography, packaging. ',
+    buttonText: 'Fluid Designer',
+    buttonLink: '#',
+    imgSrc: '/ludwig.png',
+  },
+  {
+    title: 'Kidimpro: Movimento e improvvisazione',
+    description:
+      'Un modo di esplorare insieme i gesti, il movimento, i suoni, la voce e la creatività. Realizzazione brand identity, motion graphic, postcards, merchandising, wordpress.',
+    buttonText: 'Fluid Designer',
     buttonLink: '#',
     imgSrc: '/ludwig.png',
   },
