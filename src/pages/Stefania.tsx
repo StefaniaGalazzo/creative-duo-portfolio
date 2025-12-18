@@ -1,17 +1,8 @@
-import { projectCopy } from '../utilities/constants'
+import PageWrapper from '../components/ui/PageWrapper/PageWrapper'
+import { getPersonData } from '../components/ui/PageWrapper/copy'
 
 export default function Stefania() {
-  return (
-    <section
-      style={{
-        position: 'relative',
-        height: '100vh',
-        width: '100vw',
-        overflow: 'hidden',
-      }}>
-      {/* {projectCopy.map((project, index) => (
-        // <ProjectCard key={project.title} {...project} index={index} />
-      ))} */}
-    </section>
-  )
+  const data = getPersonData('designer')
+  
+  return <PageWrapper data={data} />
 }

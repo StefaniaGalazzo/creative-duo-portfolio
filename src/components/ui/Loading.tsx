@@ -7,7 +7,7 @@ const LoaderWrapper = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: ${(theme) => theme?.colors?.mainBg || '#f0f0f0'};
+  background: ${(theme) => theme?.colors?.mainBg || 'transparent'};
 `
 
 const Dot = styled.div<{ $delay: string }>`

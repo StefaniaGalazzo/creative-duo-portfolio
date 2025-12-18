@@ -17,9 +17,16 @@ export default function SliderSection() {
         {projectCopy &&
           projectCopy.map((proj, index) => (
             <SliderWrapper key={index} id='slider-section'>
-              <Image $border='2px solid white' width={'auto'} height={'300px'} $aspectRatio='1/1' />
-              <Flex $direction='column' $alignItems='start' $gap='1.5' $height={'90%'}>
-                <Text as='h2' children={proj.title} $fontSize='3.2rem' />
+              <Image
+                src={proj?.imgSrc}
+                $overflow='hidden'
+                width={'auto'}
+                height={'300px'}
+                $aspectRatio='1/1'
+                className='hoverable'
+              />
+              <Flex $direction='column' $alignItems='start' $gap='2rem' $height={'90%'} $w={'50%'}>
+                <Text as='h2' children={proj.title} $fontSize='3.2rem' className='hoverable' />
                 <Text children={proj.description} />
                 <Button children={proj.buttonText} />
               </Flex>

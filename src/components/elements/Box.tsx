@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface BoxProps {
   $p?: string | number
   $m?: string | number
+  $margin: string | number
   $bg?: string
   $position?: string
   $width?: string | number
@@ -52,7 +53,7 @@ interface BoxProps {
 export const Box = styled.div<BoxProps>`
   padding: ${({ $p }) => $p ?? undefined};
   color: ${({ $color }) => $color ?? undefined};
-  margin: ${({ $m }) => $m ?? undefined};
+  margin: ${({ $m, $margin }) => $m || $margin || undefined};
   background: ${({ $bg }) => $bg ?? undefined};
   position: ${({ $position }) => $position ?? 'relative'};
   width: ${({ $width, $w }) => $width || $w || 'auto'};

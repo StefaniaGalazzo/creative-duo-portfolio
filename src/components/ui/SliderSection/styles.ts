@@ -11,14 +11,14 @@ const variants = {
   default: css<{ $bg?: string }>`
     display: flex;
     align-items: center;
-    padding: 8rem 2rem;
-    gap: 2rem;
+    padding: 8rem 8rem 8rem 2rem;
+    gap: 3rem;
     text-align: ${({ $textAlign }) => $textAlign || 'left'};
-    justify-content: end;
+    justify-content: center;
     z-index: 100;
     border-top: 1px solid ${({ theme }) => theme?.colors?.detail1 || '#fff'};
     width: 100vw;
-    min-width: 100vw;
+    // min-width: 100vw;
     flex-shrink: 0;
 
     /* Transizione per l'hover */

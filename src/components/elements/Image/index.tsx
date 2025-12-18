@@ -6,6 +6,7 @@ type ImgProps = React.ImgHTMLAttributes<HTMLImageElement> & {
   top?: string | number
   $aspectRatio?: string
   bottom?: string | number
+  $overflow?: string
   left?: string | number
   right?: string | number
 }
@@ -16,6 +17,7 @@ const StyledImg = styled.img<ImgProps>`
   object-fit: ${({ objectFit }) => objectFit || 'contain'};
   aspect-ratio: ${({ $aspectRatio }) => $aspectRatio || undefined};
   ${({ position }) => position && `position: ${position};`}
+  ${({ $overflow }) => $overflow && `overflow: ${$overflow};`}
   ${({ top }) => top && `top: ${top ? `${top}` : top};`}
   ${({ bottom }) => bottom && `bottom: ${bottom ? `${bottom}` : undefined};`}
   ${({ left }) => left && `left: ${left ? `${left}` : undefined};`}

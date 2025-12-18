@@ -4,10 +4,9 @@ import Loading from './components/ui/Loading'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AppLayout from './components/layout/AppLayout'
 import ErrorPage from './pages/ErrorPage'
-import IsaLayout from './components/layout/IsaLayout'
 import NotFound from './pages/NotFound'
 import { ThemeProvider } from './theme/ThemeProvider'
-import SteLayout from './components/layout/SteLayout'
+import PageLayout from './components/layout/PageLayout'
 import './index.css'
 
 const Home = React.lazy(() => import('./pages/Home'))
@@ -37,7 +36,7 @@ const router = createBrowserRouter([
 
   {
     path: '/isabella',
-    element: <IsaLayout />,
+    element: <PageLayout />,
     children: [
       {
         index: true,
@@ -49,7 +48,7 @@ const router = createBrowserRouter([
 
   {
     path: '/stefania',
-    element: <SteLayout />,
+    element: <PageLayout />,
     children: [
       {
         index: true,

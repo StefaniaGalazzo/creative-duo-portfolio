@@ -2,18 +2,20 @@ import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 
 export const projectCopy = [
   {
-    title: 'Ludwig',
+    title: 'Blogwig: Read well, write better.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Visual per articoli di divulgazione, claim, veri e propri spazi divulgativi che parlino dell’azienda a cui appartengono e che sappiano arrivare al cuore di chi li legge.',
     buttonText: 'Take a tour',
     buttonLink: '#',
+    imgSrc: '/blogwig.png',
   },
   {
-    title: 'Blogwig',
+    title: 'Ludwig.guru',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Realizzazione e ottimizzazione copy in ottica SEO, sviluppo layout desktop e mobile, tema applicazione.',
     buttonText: 'Take a tour',
     buttonLink: '#',
+    imgSrc: '/ludwig.png',
   },
   {
     title: 'Titolone pazzesco 3',
@@ -21,6 +23,7 @@ export const projectCopy = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     buttonText: 'Take a tour',
     buttonLink: '#',
+    imgSrc: '/ludwig.png',
   },
   {
     title: 'Titolone pazzesco 4',
@@ -28,6 +31,7 @@ export const projectCopy = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     buttonText: 'Take a tour',
     buttonLink: '#',
+    imgSrc: '/ludwig.png',
   },
 ]
 

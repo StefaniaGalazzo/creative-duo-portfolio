@@ -1,7 +1,6 @@
 import MainMenu from './ui/MainMenu/index'
 import Navbar from './ui/Navbar/index'
-import IsaLayout from './layout/IsaLayout'
-import SteLayout from './layout/SteLayout'
+import PageLayout from './layout/PageLayout'
 import Loading from './ui/Loading'
 import { Flex } from './elements/Flex'
 import { Box } from './elements/Box'
@@ -15,8 +14,7 @@ import { AnimatedBackground } from './ui/AnimatedBackground'
 export {
   MainMenu,
   Navbar,
-  IsaLayout,
-  SteLayout,
+  PageLayout,
   Loading,
   Flex,
   Box,

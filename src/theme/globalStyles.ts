@@ -7,8 +7,15 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-
-
+//  hide scrollbar 
+  *{
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  }
+  
+  *::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari */
+  }
 
   :root {
     color-scheme: light dark;
@@ -50,6 +57,7 @@ export const GlobalStyles = createGlobalStyle`
   }
     
   main{
+    min-height:100vh;
     display: grid;
     grid-template-columns: auto 1400px auto;
   }
@@ -95,5 +103,12 @@ export const GlobalStyles = createGlobalStyle`
     50% { transform: translateX(50%) translateY(10%); }
     100% { transform: translateX(-50%) translateY(-10%); }
   }
+
+// --------------
+
+.bold{
+font-weight:bold;
+}
+
 
  `
