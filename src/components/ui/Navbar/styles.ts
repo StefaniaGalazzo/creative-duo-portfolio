@@ -39,7 +39,7 @@ export const NavWrapper = styled.header<NavWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: end;
-  z-index: 100;
+  z-index: 900;
   text-align: ${({ $textAlign }) => $textAlign || 'center'};
 
   ${({ $variant }) => variants[$variant || 'default']}

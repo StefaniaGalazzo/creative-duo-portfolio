@@ -11,6 +11,7 @@ const variants = {
   default: css<{ $bg?: string }>`
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 8rem 2rem;
     gap: 3rem;
     text-align: ${({ $textAlign }) => $textAlign || 'left'};

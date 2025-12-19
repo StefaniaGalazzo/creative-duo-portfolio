@@ -39,17 +39,23 @@ export const HeroWrapper = styled.div<HeroWrapperProps>`
     }
   }
 
-  /* Tablet */
+  /* Tablet big */
   @media (max-width: 768px) {
     .name {
-      font-size: 4rem;
+      font-size: 3.6rem;
+    }
+  }
+  /* Tablet small */
+  @media (max-width: 565px) {
+    .name {
+      font-size: 3.4rem;
     }
   }
 
   // /* Mobile */
-  // @media (max-width: 480px) {
-  //   .name {
-  //     font-size: 5rem;
-  //   }
-  // }
+  @media (max-width: 540px) {
+    .name {
+      font-size: 3rem;
+    }
+  }
 `

@@ -48,6 +48,8 @@ interface BoxProps {
   $transition?: string
   $opacity?: string | number
   $fontWeight?: string | number
+
+  $desktopOnly?: boolean
 }
 
 export const Box = styled.div<BoxProps>`
@@ -99,4 +101,13 @@ export const Box = styled.div<BoxProps>`
   outline-offset: ${({ $outlineOffset }) => $outlineOffset ?? undefined};
 
   box-shadow: ${({ $boxShadow }) => $boxShadow || 'none'};
+  ${({ $desktopOnly }) =>
+    $desktopOnly &&
+    `
+    @media (max-width: 767px) {
+  main {
+  display:none;
+  }
+}
+  `}
 `

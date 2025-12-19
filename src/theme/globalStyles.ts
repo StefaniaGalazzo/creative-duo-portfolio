@@ -42,10 +42,11 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body, :root, #root {
     width: 100%;
+    height: 100vh;
+    max-width:100vw;
   
     margin: 0;
     padding: 0;
-    height: 100vh;
 
     font-family: 'Migra-Extralight', serif;
 
@@ -59,7 +60,7 @@ export const GlobalStyles = createGlobalStyle`
   main{
     min-height:100vh;
     display: grid;
-    grid-template-columns: auto 1400px auto;
+    grid-template-columns: auto 90% auto;
   }
 
   h1, h2, h3, h4, h5, h6, p, span,  {
@@ -111,4 +112,9 @@ font-weight:bold;
 }
 
 
+@media (max-width: 767px) {
+  main {
+  display:block;
+  }
+}
  `
