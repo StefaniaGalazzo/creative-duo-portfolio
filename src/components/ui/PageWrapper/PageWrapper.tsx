@@ -29,12 +29,12 @@ export default function PageWrapper({ data }: PageWrapperProps) {
       <Inner>
         <Flex $gap='2rem' $direction='column'>
           {/* Profile Section */}
-          <Flex $gap='2rem'>
-            {/* 3D */}
-            <Experience model='' />
+          <Flex $gap='2rem' $wrap='wrap' $justifyContent='center'>
+            {/* 3D - passa modelType dinamicamente */}
+            <Experience modelType={data.modelType} />
 
             {/* Bio Info */}
-            <Flex $gap='2rem' $direction='column' $width='50%'>
+            <Flex $gap='2rem' $direction='column' className='bio-info-container'>
               <Text as='p' $display='flex' $direction='column' $gap='0.5rem'>
                 {bioInfo.map((item, index) => (
                   <span key={index} className='w-100'>
@@ -46,8 +46,8 @@ export default function PageWrapper({ data }: PageWrapperProps) {
           </Flex>
 
           {/* Bio Paragraphs */}
-          {data?.bio.intro && <Text children={data.bio.intro} />}
-          {data?.bio.body && <Text children={data.bio.body} />}
+          {/* {data?.bio.intro && <Text children={data.bio.intro} />} */}
+          {/* {data?.bio.body && <Text children={data.bio.body} />} */}
         </Flex>
       </Inner>
 

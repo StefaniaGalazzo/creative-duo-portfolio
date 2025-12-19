@@ -1,6 +1,7 @@
 // src/components/ui/PageWrapper/copy.ts
 
 export type PersonRole = 'designer' | 'copywriter'
+export type ModelType = 'squirtle' | 'psyduck'
 
 export interface PersonData {
   // Identity
@@ -39,7 +40,7 @@ export interface PersonData {
   }
 
   // Assets
-  imagePath?: string // Path all'immagine profilo
+  modelType: ModelType // 3D model da mostrare
   cvPath?: string // Path al CV
 }
 
@@ -89,15 +90,15 @@ export const pageCopy: Record<PersonRole, PersonData> = {
     },
 
     // Assets
-    imagePath: undefined, // TODO: Add image
-    cvPath: undefined, // TODO: Add CV
+    modelType: 'squirtle', // Designer → Squirtle (Acqua)
+    cvPath: undefined,
   },
 
   copywriter: {
     // Identity
     name: 'Isabella De Biasi',
     role: 'copywriter',
-    emoji: '⚡', // Psico
+    emoji: '⚡',
 
     // Bio Info
     age: 'Non si dice! (29)',
@@ -134,8 +135,8 @@ export const pageCopy: Record<PersonRole, PersonData> = {
     },
 
     // Assets
-    imagePath: undefined, // TODO: Add image
-    cvPath: undefined, // TODO: Add CV
+    modelType: 'psyduck', // Copywriter → Psyduck (Psico)
+    cvPath: undefined,
   },
 }
 

@@ -1,32 +1,29 @@
 import { Canvas } from '@react-three/fiber'
 import { Suspense, useMemo } from 'react'
-import { GradientBackground, Squirtle } from '../..'
+import { GradientBackground } from '../..'
 import { useControls } from 'leva'
 import { AutoRotateCamera } from '../AutoRotateCamera'
 import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
+import type { ModelType } from '../PageWrapper/copy'
+import { Psyduck, Squirtle } from '../../models'
 
-export default function Experience() {
+interface ExperienceProps {
+  modelType?: ModelType
+}
+
+export default function Experience({ modelType }: ExperienceProps) {
   const lightControls = useControls(
     'Lights',
     {
-      // Debug
       showHelpers: { value: false, label: '👁️ Show Helpers' },
-
-      // Directional Light 1
       dirPosition: { value: [8, 3, 5], step: 0.5, label: 'Dir1 Position' },
       dirIntensity: { value: 5, min: 0, max: 5, step: 0.5, label: 'Dir1 Intensity' },
       dirColor: { value: '#243ef0', label: 'Dir1 Color' },
-
-      // Ambient Light
       ambIntensity: { value: 0.15, min: 0, max: 3, step: 0.1, label: 'Amb Intensity' },
       ambColor: { value: '#959ded', label: 'Amb Color' },
-
-      // Hemisphere Light
       hemiIntensity: { value: 1.1, min: 0, max: 2, step: 0.1, label: 'Hemi Intensity' },
       hemiSkyColor: { value: '#3b54ff', label: 'Hemi Sky' },
       hemiGroundColor: { value: '#06022d', label: 'Hemi Ground' },
-
-      // Directional Light 2
       dirPosition_2: { value: [-19, 8, -17], step: 0.5, label: 'Dir2 Position' },
       dirIntensity_2: { value: 5, min: 0, max: 5, step: 0.5, label: 'Dir2 Intensity' },
       dirColor_2: { value: '#243ef0', label: 'Dir2 Color' },
@@ -75,29 +72,18 @@ export default function Experience() {
   const cameraControls = useControls(
     'Camera',
     {
-      // Auto-rotation
       enableAutoRotate: { value: true, label: '🔄 Auto Rotate' },
-      autoRotateSpeed: { value: 0.5, min: -2, max: 2, step: 0.1, label: 'Auto Speed' },
+      autoRotateSpeed: { value: 4, min: -2, max: 2, step: 0.1, label: 'Auto Speed' },
       pauseOnInteraction: { value: true, label: '⏸️ Pause on Interact' },
       resumeDelay: { value: 2000, min: 500, max: 5000, step: 100, label: 'Resume Delay (ms)' },
-
-      // Camera position
       cameraDistance: { value: 8, min: 3, max: 15, step: 0.5, label: 'Initial Distance' },
       cameraHeight: { value: 1.5, min: 0, max: 5, step: 0.1, label: 'Initial Height' },
-
-      // Distance limits
       minDist: { value: 5, min: 2, max: 10, label: 'Min Distance' },
       maxDist: { value: 15, min: 10, max: 30, label: 'Max Distance' },
-
-      // Rotation controls
       rotSpeed: { value: 0.8, min: 0.1, max: 2, step: 0.05, label: 'Manual Rotate Speed' },
       enableRotate: { value: true, label: '↻ Enable Manual Rotate' },
-
-      // Vertical rotation limits
       minPolarDeg: { value: 60, min: 0, max: 90, step: 5, label: 'MinPolarAngle (°)' },
       maxPolarDeg: { value: 90, min: 30, max: 90, step: 5, label: 'MaxVertAngle (°)' },
-
-      // Other controls
       enableZoom: { value: true, label: '🔍 Enable Zoom' },
       enablePan: { value: false, label: '✋ Enable Pan' },
     },
@@ -108,11 +94,15 @@ export default function Experience() {
   const maxPolarAngle = (cameraControls.maxPolarDeg * Math.PI) / 180
   const cameraPosition: [number, number, number] = [0, cameraControls.cameraHeight, cameraControls.cameraDistance]
 
+  // Seleziona il modello in base al modelType
+  const ModelComponent = modelType === 'psyduck' ? Psyduck : Squirtle
+  const preset = modelType === 'psyduck' ? 'sunset' : 'ocean'
+
   return (
     <Canvas
       camera={{ position: cameraPosition, fov: 50, near: 0.1, far: 300 }}
       performance={{ min: 0.5 }}
-      frameloop='demand' // Renderizza solo quando necessario
+      frameloop='demand'
       gl={{
         powerPreference: 'high-performance',
         alpha: false,
@@ -121,7 +111,7 @@ export default function Experience() {
         depth: true,
       }}
       className='canvas'>
-      <GradientBackground />
+      <GradientBackground preset={preset} />
       {lights}
 
       <AdaptiveDpr pixelated />
@@ -146,7 +136,7 @@ export default function Experience() {
       />
 
       <Suspense fallback={null}>
-        <Squirtle />
+        <ModelComponent />
       </Suspense>
     </Canvas>
   )

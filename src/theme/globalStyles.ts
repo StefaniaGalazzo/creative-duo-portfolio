@@ -87,7 +87,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .canvas {
     border-radius:2px;
-    width:300px !important;
+    width:350px !important;
     aspect-ratio: 1/1 !important;
     cursor: grab;
     box-shadow: 2px 2px 0 #000;
@@ -121,14 +121,25 @@ export const GlobalStyles = createGlobalStyle`
 
 // --------------
 
+
+
 .bold{
 font-weight:bold;
 }
 
+.bio-info-container{
+width:50%;
+}
 
 @media (max-width: 768px) {
   main {
   display:block;
   }
 }
+@media (max-width: 560px) {
+ .bio-info-container {
+    width: 350px;
+  }
+}
+
  `

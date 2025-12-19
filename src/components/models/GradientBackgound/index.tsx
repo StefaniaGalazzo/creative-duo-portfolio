@@ -4,7 +4,7 @@ import { useControls, folder } from 'leva'
 import * as THREE from 'three'
 import { GRADIENT_PRESETS } from './presets'
 
-const GradientBackground = () => {
+const GradientBackground = ({ preset }) => {
   const { scene } = useThree()
 
   const [{ color1, color2, color3, color1Stop, color2Stop, color3Stop }, set] = useControls(
@@ -13,7 +13,7 @@ const GradientBackground = () => {
       // Preset selector
       presets: folder({
         preset: {
-          value: 'ocean',
+          value: preset || 'ocean',
           options: Object.keys(GRADIENT_PRESETS),
           label: 'Load Preset',
           onChange: (presetKey) => {

@@ -11,11 +11,11 @@ export const GRADIENT_PRESETS = {
   },
   sunset: {
     name: 'Sunset',
-    color1: '#0f0c29',
+    color1: '#331501',
     color1Stop: 0.0,
-    color2: '#302b63',
+    color2: '#d3b13f',
     color2Stop: 0.5,
-    color3: '#24243e',
+    color3: '#331501',
     color3Stop: 1.0,
   },
   ocean: {
