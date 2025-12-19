@@ -66,7 +66,7 @@ export const Pill = styled.div<{
   $radius?: string
   $justify?: string
   $bg?: string
-  shadow?: boolean
+  $shadow?: boolean
 }>`
   height: ${({ $h }) => $h || '50px'};
   width: ${({ $w }) => $w || 'auto'};
@@ -80,8 +80,8 @@ export const Pill = styled.div<{
   align-items: center;
   gap: 0.5rem;
   background: ${({ $bg }) => $bg || '#e9f8fd'};
-  ${({ shadow }) =>
-    shadow &&
+  ${({ $shadow }) =>
+    $shadow &&
     `
       box-shadow: 2px 0 0 #000;
       &:hover {
@@ -92,7 +92,7 @@ export const Pill = styled.div<{
     `}
 `
 
-export const LeafIcon = styled.div<{ $bg?: string; shadow?: boolean }>`
+export const LeafIcon = styled.div<{ $bg?: string; $shadow?: boolean }>`
   width: 42px;
   height: 42px;
   aspect-ratio: 1/1;
@@ -105,8 +105,8 @@ export const LeafIcon = styled.div<{ $bg?: string; shadow?: boolean }>`
   font-size: 22px;
   background: ${({ $bg }) => $bg || 'transparent'};
 
-  ${({ shadow }) =>
-    shadow &&
+  ${({ $shadow }) =>
+    $shadow &&
     `
       box-shadow: 2px 0 0 #000;
       &:hover {

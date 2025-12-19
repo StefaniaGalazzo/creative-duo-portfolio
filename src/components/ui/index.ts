@@ -9,5 +9,17 @@ import SliderSection from './SliderSection'
 import TextSection from './TextSection'
 import Loading from './Loading'
 
+import Experience from './Experience'
 //
-export { AnimatedBackground, Navbar, BurgerMenu, CustomCursor, Hero, MainMenu, SliderSection, TextSection, Loading }
+export {
+  AnimatedBackground,
+  Navbar,
+  BurgerMenu,
+  CustomCursor,
+  Hero,
+  MainMenu,
+  SliderSection,
+  TextSection,
+  Loading,
+  Experience,
+}

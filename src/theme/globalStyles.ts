@@ -85,6 +85,20 @@ export const GlobalStyles = createGlobalStyle`
     color: unset;
   }
 
+  .canvas {
+    border-radius:2px;
+    width:300px !important;
+    aspect-ratio: 1/1 !important;
+    cursor: grab;
+    box-shadow: 2px 2px 0 #000;
+    
+  }
+  .canvas:hover {
+      box-shadow: 4px 4px 0 #000;
+      transition: all 0.1s ease-in-out;
+      transform:  scale(1.1);
+    }
+
   // --------  animated background gradient  ---------------------
 
     @keyframes moveInCircle {

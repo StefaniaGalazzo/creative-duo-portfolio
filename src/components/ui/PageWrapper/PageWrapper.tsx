@@ -1,8 +1,9 @@
-import { Box, Flex, Text } from '../../elements'
+import { Flex, Text } from '../../elements'
 import { GoDownload } from 'react-icons/go'
 import { Link } from 'react-router-dom'
 import { Frame, TopBar, Circle, Pill, TopRow, LeafIcon, Inner, BottomBar } from './styles'
 import { type PersonData, formatBioInfo } from './copy'
+import Experience from '../Experience'
 
 interface PageWrapperProps {
   data: PersonData
@@ -29,17 +30,8 @@ export default function PageWrapper({ data }: PageWrapperProps) {
         <Flex $gap='2rem' $direction='column'>
           {/* Profile Section */}
           <Flex $gap='2rem'>
-            {/* Profile Image */}
-            <Box
-              $h='300px'
-              $width='300px'
-              $border='1px solid'
-              style={{
-                backgroundImage: data.imagePath ? `url(${data.imagePath})` : 'none',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            />
+            {/* 3D */}
+            <Experience model='' />
 
             {/* Bio Info */}
             <Flex $gap='2rem' $direction='column' $width='50%'>
@@ -66,7 +58,7 @@ export default function PageWrapper({ data }: PageWrapperProps) {
           $h='100%'
           $radius='8px'
           $bg='#e9f8fd'
-          shadow
+          $shadow
           style={{
             cursor: data.cvPath ? 'pointer' : 'not-allowed',
           }}
