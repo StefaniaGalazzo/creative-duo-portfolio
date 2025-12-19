@@ -5,12 +5,16 @@ import { Box } from '../elements/Box'
 import { useTheme } from '../../theme/ThemeProvider'
 import CustomCursor from '../ui/CustomCursor'
 import { FooterSocials } from '../ui/FooterSocials'
+import { FluidPageTransition } from '../ui/FluidPageTransition'
 
 export default function AppLayout() {
   const { theme } = useTheme()
 
   return (
     <CustomCursor>
+      {/* Fluid Transition - sopra tutto */}
+      <FluidPageTransition />
+
       <Box $w='100%' $bg={theme.colors.surface} $color={theme?.colors?.detail1} id='app-layout'>
         <Navbar />
         <main>

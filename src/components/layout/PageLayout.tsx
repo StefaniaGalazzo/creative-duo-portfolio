@@ -2,11 +2,15 @@ import { Box } from '../elements'
 import { Outlet } from 'react-router-dom'
 import { useTheme } from '../../theme/ThemeProvider'
 import { AnimatedBackground } from '../ui'
+import { FluidPageTransition } from '../ui/FluidPageTransition'
 
 export default function PageLayout() {
   const { theme } = useTheme()
   return (
     <Box $cursor='auto' $position='relative'>
+      {/* Fluid Transition - sopra tutto */}
+      <FluidPageTransition />
+
       <AnimatedBackground />
 
       <Box $w='100%' $color={theme?.colors?.detail1} $position='relative' id='ste-layout'>
