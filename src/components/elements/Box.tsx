@@ -104,10 +104,8 @@ export const Box = styled.div<BoxProps>`
   ${({ $desktopOnly }) =>
     $desktopOnly &&
     `
-    @media (max-width: 767px) {
-  main {
-  display:none;
-  }
-}
+    @media (max-width: 768px) {
+      display:none;
+    }
   `}
 `

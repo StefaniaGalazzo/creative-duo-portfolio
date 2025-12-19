@@ -112,7 +112,7 @@ font-weight:bold;
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   main {
   display:block;
   }

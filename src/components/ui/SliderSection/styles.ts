@@ -21,16 +21,32 @@ const variants = {
     width: 100vw;
     // min-width: 100vw;
     flex-shrink: 0;
-
-    /* Transizione per l'hover */
     transition: all 0.3s ease;
 
-    /* Effetto hover */
-    // &:hover {
-    //   border-top-color: ${({ theme }) => theme?.colors?.accent3 || '#ffaccfff'};
-    //   transform: translateY(-10px) scale(1.02);
-    //   box-shadow: 0 10px 30px rgba(255, 172, 207, 0.2);
-    // }
+    img {
+      height: 300px;
+    }
+    .proj-txt-container {
+      width: 50%;
+    }
+    .proj-title {
+      font-size: 3.2rem;
+    }
+
+    // -----RESPONSIVE ---- //
+    @media (max-width: 768px) {
+      img {
+        height: 250px;
+      }
+      .proj-title {
+        font-size: 2.8rem;
+      }
+    }
+    @media (max-width: 540px) {
+      .proj-title {
+        font-size: 2.8rem;
+      }
+    }
   `,
 }
 
