@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { Suspense, useMemo } from 'react'
 import { GradientBackground } from '../..'
-import { useControls } from 'leva'
+import { useControls, Leva } from 'leva'
 import { AutoRotateCamera } from '../AutoRotateCamera'
 import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 import type { ModelType } from '../PageWrapper/copy'
@@ -99,45 +99,48 @@ export default function Experience({ modelType }: ExperienceProps) {
   const preset = modelType === 'psyduck' ? 'sunset' : 'ocean'
 
   return (
-    <Canvas
-      camera={{ position: cameraPosition, fov: 50, near: 0.1, far: 300 }}
-      performance={{ min: 0.5 }}
-      frameloop='demand'
-      gl={{
-        powerPreference: 'high-performance',
-        alpha: false,
-        antialias: true,
-        stencil: false,
-        depth: true,
-      }}
-      className='canvas'>
-      <GradientBackground preset={preset} />
-      {lights}
+    <>
+      <Leva hidden />
+      <Canvas
+        camera={{ position: cameraPosition, fov: 50, near: 0.1, far: 300 }}
+        performance={{ min: 0.5 }}
+        frameloop='demand'
+        gl={{
+          powerPreference: 'high-performance',
+          alpha: false,
+          antialias: true,
+          stencil: false,
+          depth: true,
+        }}
+        className='canvas'>
+        <GradientBackground preset={preset} />
+        {lights}
 
-      <AdaptiveDpr pixelated />
-      <AdaptiveEvents />
+        <AdaptiveDpr pixelated />
+        <AdaptiveEvents />
 
-      <AutoRotateCamera
-        autoRotateSpeed={cameraControls.autoRotateSpeed}
-        enableAutoRotate={cameraControls.enableAutoRotate}
-        pauseOnInteraction={cameraControls.pauseOnInteraction}
-        resumeDelay={cameraControls.resumeDelay}
-        target={[0, 0, 0]}
-        enableDamping={true}
-        dampingFactor={0.05}
-        rotateSpeed={cameraControls.rotSpeed}
-        enableZoom={cameraControls.enableZoom}
-        enableRotate={cameraControls.enableRotate}
-        enablePan={cameraControls.enablePan}
-        minDistance={cameraControls.minDist}
-        maxDistance={cameraControls.maxDist}
-        minPolarAngle={minPolarAngle}
-        maxPolarAngle={maxPolarAngle}
-      />
+        <AutoRotateCamera
+          autoRotateSpeed={cameraControls.autoRotateSpeed}
+          enableAutoRotate={cameraControls.enableAutoRotate}
+          pauseOnInteraction={cameraControls.pauseOnInteraction}
+          resumeDelay={cameraControls.resumeDelay}
+          target={[0, 0, 0]}
+          enableDamping={true}
+          dampingFactor={0.05}
+          rotateSpeed={cameraControls.rotSpeed}
+          enableZoom={cameraControls.enableZoom}
+          enableRotate={cameraControls.enableRotate}
+          enablePan={cameraControls.enablePan}
+          minDistance={cameraControls.minDist}
+          maxDistance={cameraControls.maxDist}
+          minPolarAngle={minPolarAngle}
+          maxPolarAngle={maxPolarAngle}
+        />
 
-      <Suspense fallback={null}>
-        <ModelComponent />
-      </Suspense>
-    </Canvas>
+        <Suspense fallback={null}>
+          <ModelComponent />
+        </Suspense>
+      </Canvas>
+    </>
   )
 }

@@ -23,7 +23,7 @@ export const projectCopy = [
       'Visual per articoli di divulgazione, claim, veri e propri spazi divulgativi che parlino dell’azienda a cui appartengono e che sappiano arrivare al cuore di chi li legge.',
     buttonText: 'Together',
     buttonLink: '#',
-    imgSrc: '/ludwig.png',
+    imgSrc: '/ludwig-community.png',
   },
   {
     title: 'Tiraditto: Grano gentile ritrovato',

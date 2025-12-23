@@ -1,7 +1,7 @@
 import { Flex, Text } from '../../elements'
-import { GoDownload } from 'react-icons/go'
+// import { GoDownload } from 'react-icons/go'
 import { Link } from 'react-router-dom'
-import { Frame, TopBar, Circle, Pill, TopRow, LeafIcon, Inner, BottomBar } from './styles'
+import { Frame, TopBar, Pill, TopRow, LeafIcon, Inner, BottomBar } from './styles'
 import { type PersonData, formatBioInfo } from './copy'
 import Experience from '../Experience'
 
@@ -17,7 +17,7 @@ export default function PageWrapper({ data }: PageWrapperProps) {
       {/* Top Bar */}
       <TopBar>
         <TopRow>
-          <Circle />
+          {/* <Circle /> */}
           <Pill children={data.name} />
         </TopRow>
         <Link to='/' style={{ position: 'absolute', right: 0, top: 0 }}>
@@ -54,7 +54,7 @@ export default function PageWrapper({ data }: PageWrapperProps) {
       {/* Bottom Bar */}
       <BottomBar>
         {/* CV Download */}
-        <Pill
+        {/* <Pill
           $h='100%'
           $radius='8px'
           $bg='#e9f8fd'
@@ -69,7 +69,7 @@ export default function PageWrapper({ data }: PageWrapperProps) {
           }}>
           <GoDownload />
           <span> CV</span>
-        </Pill>
+        </Pill> */}
 
         {/* Contact Info */}
         <Pill $h='auto' $radius='8px' $bg='#e9f8fd'>
